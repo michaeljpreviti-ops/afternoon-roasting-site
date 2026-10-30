@@ -1,0 +1,7 @@
+# The untouched originals src/prep_assets.py reads. They stay in git so the
+# asset pipeline is reproducible, but nothing on the page links them, so there
+# is no reason to upload 16 MB of them to the CDN.
+assets/img/src/
+
+src/
+README.md

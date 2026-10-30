@@ -1,0 +1,1444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Small-batch coffee roaster and coffeeshop at 619 S Main St, Gainesville, Florida. Roasted Mondays, shipped Tuesdays. Espresso bar open daily 7:30 AM to 3 PM.">
+<meta name="theme-color" content="#0D1420">
+<link rel="icon" href="assets/img/icon-512.png" sizes="256x256">
+<link rel="apple-touch-icon" href="assets/img/icon-512.png">
+<meta property="og:title" content="Afternoon Roasting — Gainesville, Florida">
+<meta property="og:description" content="Small-batch coffee roaster and coffeeshop at 619 S Main St, Gainesville, Florida. Roasted Mondays, shipped Tuesdays. Espresso bar open daily 7:30 AM to 3 PM.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/icon-512.png">
+<meta name="twitter:card" content="summary_large_image">
+<title>Afternoon Roasting — Gainesville, Florida</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Jost:wght@400;500;600;700&display=swap">
+<style>/* Layout: one column, cream ground by day and deep navy by night, with a
+   daisy-yellow glow behind the hero. Sections are banded by surface rather
+   than by rule. Jost stands in for the Futura the shop letters its board and
+   its bags in; Atkinson Hyperlegible carries the body copy. */
+:root{
+  --bg:#0D1420;--surface:#141D2C;--raised:#1C2739;--fg:#F3F6FA;--muted:#A9B5C4;--line:#28344A;--line-strong:#7A8A9F;--accent:#8CBBFF;--accent-ink:#08121F;--glow:#FFCE00;
+  --font-display:"Jost",Futura,"Century Gothic",system-ui,sans-serif;
+  --font-body:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-readable:var(--font-body);
+  --font-ui:var(--font-display);
+  --step--1:clamp(.78rem,.76rem + .1vw,.84rem);
+  --step-0:clamp(1rem,.97rem + .15vw,1.06rem);
+  --step-1:clamp(1.2rem,1.12rem + .4vw,1.4rem);
+  --step-2:clamp(1.5rem,1.33rem + .85vw,2rem);
+  --step-3:clamp(2rem,1.6rem + 2vw,3.2rem);
+  --step-4:clamp(2.6rem,1.9rem + 3.4vw,4.6rem);
+  --radius:16px;
+  --measure:62ch;
+  --gutter:max(1rem,env(safe-area-inset-left,0px));
+  --gutter-r:max(1rem,env(safe-area-inset-right,0px));
+  color-scheme:dark;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){--bg:#FBFAF5;--surface:#FFFFFF;--raised:#F1EFE4;--fg:#16181D;--muted:#4D525B;--line:#DEDBCC;--line-strong:#6B707A;--accent:#0B51AE;--accent-ink:#FFFFFF;--glow:#7A5300; color-scheme:light}
+}
+:root[data-theme="light"]{--bg:#FBFAF5;--surface:#FFFFFF;--raised:#F1EFE4;--fg:#16181D;--muted:#4D525B;--line:#DEDBCC;--line-strong:#6B707A;--accent:#0B51AE;--accent-ink:#FFFFFF;--glow:#7A5300; color-scheme:light}
+
+/* High-contrast mode from the accessibility panel wins over both themes. */
+*,*::before,*::after{box-sizing:border-box}
+html{font-size:calc(100% * var(--a11y-fs,1));-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--fg);
+  font-family:var(--font-body);font-size:var(--step-0);line-height:1.65;
+  font-weight:400;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+[hidden]{display:none !important}
+h1,h2,h3{font-family:var(--font-display);font-weight:700;line-height:1.08;
+  text-wrap:balance;margin:0;letter-spacing:-.02em}
+.band h2{font-size:var(--step-2);margin-bottom:.9rem}
+.lede{color:var(--muted);font-size:var(--step-1);max-width:46ch}
+.centred{margin-top:2rem}
+p{margin:0;max-width:var(--measure)}
+a{color:var(--accent)}
+a:hover{text-decoration-thickness:2px}
+
+
+/* Focus is always visible; Highlight Links in the toolbar strengthens it. */
+:where(a,button,input,output,summary,[tabindex]):focus-visible{
+  outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:var(--gutter);top:.5rem;z-index:60;
+  background:var(--accent);color:var(--accent-ink);padding:.7rem 1.1rem;
+  border-radius:8px;font-weight:700;transform:translateY(-200%)}
+.skip:focus{transform:translateY(0)}
+
+.wrap{width:100%;max-width:72rem;margin-inline:auto;
+  padding-left:var(--gutter);padding-right:var(--gutter-r)}
+.band{padding-block:clamp(3rem,7vw,5.5rem)}
+.band--surface{background:var(--surface)}
+.icon{width:1.25em;height:1.25em;fill:currentColor;flex:none}
+
+/* --- header --------------------------------------------------------- */
+body::before{content:"";position:fixed;inset:0 0 auto;
+  height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;
+  background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hdr__in{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+  padding-block:.7rem}
+.hdr__logo{display:flex;align-items:center;gap:.6rem;
+  text-decoration:none;color:inherit}
+/* The daisy ships on a white disc, so one file reads on the cream ground and
+   on the navy one; the name is set in type rather than shipped as art. */
+.mark{display:inline-flex;align-items:center;gap:.6rem}
+.mark img{width:2.6rem;height:2.6rem;flex:none}
+.mark__txt{display:flex;flex-direction:column;line-height:.95;
+  font-family:var(--font-display);letter-spacing:-.02em}
+.mark__txt b{font-weight:700;font-size:1.22rem}
+.mark__txt i{font-style:normal;font-weight:500;font-size:.78rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.hdr__logo:hover .mark__txt i{color:var(--accent)}
+.mark--ftr{margin-bottom:1rem}
+.mark--ftr img{width:3.2rem;height:3.2rem}
+.mark--ftr .mark__txt b{font-size:1.5rem}
+.nav{display:flex;align-items:center;gap:.25rem;flex-wrap:wrap}
+.nav a{color:var(--fg);text-decoration:none;padding:.6rem .7rem;
+  border-radius:8px;font-weight:500;font-size:var(--step--1)}
+.nav a:hover{background:var(--raised);color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:44px;padding:.65rem 1.1rem;border-radius:999px;font-weight:700;
+  text-decoration:none;border:2px solid transparent;cursor:pointer;
+  font-family:var(--font-ui);font-size:var(--step--1);line-height:1.2}
+.btn--solid{background:var(--accent);color:var(--accent-ink)}
+.btn--solid:hover{filter:brightness(1.08)}
+.btn--ghost{border-color:var(--line-strong);color:var(--fg);background:transparent}
+.btn--ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn--ig{background:transparent;border-color:var(--accent);color:var(--accent)}
+.btn--ig:hover{background:var(--accent);color:var(--accent-ink)}
+
+/* --- hero ----------------------------------------------------------- */
+.hero{position:relative;overflow:hidden;background:var(--bg)}
+.hero::after{content:"";position:absolute;z-index:0;inset:-20% -10% auto -10%;
+  height:70%;pointer-events:none;
+  background:radial-gradient(60% 60% at 70% 20%,
+    color-mix(in srgb,var(--glow) 16%,transparent),transparent 70%)}
+.hero__in{position:relative;z-index:1;display:grid;gap:clamp(2rem,4vw,3.5rem);
+  grid-template-columns:1fr;align-items:center;padding-block:clamp(2.5rem,6vw,4.5rem)}
+@media (min-width:62rem){.hero__in{grid-template-columns:1.05fr .95fr}}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;
+  font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;
+  font-weight:700;color:var(--muted);margin-bottom:1rem}
+.hero h1{font-size:var(--step-4);letter-spacing:-.02em;font-weight:600}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero__lede{margin-top:1.1rem;font-size:var(--step-1);color:var(--muted);
+  max-width:34ch}
+.hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.8rem}
+.hero__art{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;min-width:0}
+.hero__art img{border-radius:var(--radius);aspect-ratio:1;object-fit:cover;
+  width:100%;border:1px solid var(--line)}
+.hero__art img:first-child{grid-column:span 2;aspect-ratio:4/3}
+
+/* live open/closed pill */
+.status{display:inline-flex;align-items:center;gap:.55rem;margin-top:1.4rem;
+  padding:.45rem .95rem;border-radius:999px;background:var(--raised);
+  border:1px solid var(--line-strong);font-size:var(--step--1);font-weight:600}
+.status__dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--muted);flex:none}
+.status[data-open="yes"] .status__dot{background:var(--accent);
+  animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.status__dot{animation:none !important}}
+
+
+/* --- ratings -------------------------------------------------------- */
+.rating{display:grid;gap:1.25rem;grid-template-columns:1fr;align-items:center;
+  background:var(--raised);border:1px solid var(--line);
+  border-radius:var(--radius);padding:clamp(1.2rem,3vw,1.9rem)}
+@media (min-width:46rem){.rating{grid-template-columns:auto 1px 1fr}}
+.rating__main{display:flex;align-items:center;gap:1rem}
+.rating__num{font-family:var(--font-display);font-size:var(--step-3);
+  font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.rating__meta{font-size:var(--step--1);color:var(--muted);margin-top:.25rem}
+.rating__rule{background:var(--line);display:none}
+@media (min-width:46rem){.rating__rule{display:block;align-self:stretch}}
+.rating__side{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;
+  font-size:var(--step--1)}
+.stars{height:1.25em;width:auto;vertical-align:-.2em}
+.star--empty{fill:var(--line-strong)}
+.star--full{fill:var(--glow)}
+
+/* --- photos --------------------------------------------------------- */
+.gallery{display:grid;gap:.7rem;margin-top:1.8rem;
+  grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+.gallery img{border-radius:var(--radius);aspect-ratio:1;object-fit:cover;
+  width:100%;border:1px solid var(--line)}
+
+/* --- the shelf: one card per coffee ---------------------------------- */
+.shelf{display:grid;gap:1.2rem;margin-top:2rem;grid-template-columns:1fr}
+@media (min-width:40rem){.shelf{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:68rem){.shelf{grid-template-columns:repeat(3,1fr)}}
+.bag{display:flex;flex-direction:column;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.bag__img{width:100%;aspect-ratio:1;object-fit:cover;
+  border-bottom:1px solid var(--line)}
+.bag__body{display:flex;flex-direction:column;gap:.7rem;flex:1;
+  padding:clamp(1.1rem,2.6vw,1.5rem)}
+.bag__kind{font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;
+  font-weight:700;color:var(--muted)}
+.bag h3{font-size:var(--step-1)}
+.bag__profile{font-weight:700;color:var(--accent)}
+.bag__note{color:var(--muted);font-size:var(--step--1)}
+.bag__flag{align-self:flex-start;background:var(--raised);
+  border:1px solid var(--line-strong);border-radius:999px;
+  padding:.3rem .8rem;font-size:var(--step--1);font-weight:700}
+.bag__facts{display:grid;gap:.35rem;margin:0;font-size:var(--step--1)}
+.bag__facts>div{display:flex;gap:.6rem;align-items:baseline}
+.bag__facts dt{flex:none;width:6.6rem;color:var(--muted);font-weight:700;
+  text-transform:uppercase;letter-spacing:.07em;font-size:.72em}
+.bag__facts dd{margin:0}
+.bag__prices{list-style:none;margin:.3rem 0 0;padding:0;display:grid;gap:.1rem}
+.bag__prices li{display:flex;justify-content:space-between;gap:1rem;
+  padding:.45rem 0;border-bottom:1px solid var(--line);font-size:var(--step--1)}
+.bag__size{color:var(--muted)}
+.bag__price{font-weight:700;font-variant-numeric:tabular-nums}
+.bag__buy{margin-top:auto;align-self:flex-start}
+
+.club{display:grid;gap:1.4rem;align-items:center;margin-top:1.6rem;
+  grid-template-columns:1fr;background:var(--raised);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(1.3rem,3vw,2rem)}
+@media (min-width:52rem){.club{grid-template-columns:1fr auto}}
+.club h3{font-size:var(--step-2);margin:.3rem 0 .6rem}
+.club p{color:var(--muted)}
+.club__price{margin-top:.8rem;font-weight:700;color:var(--fg)}
+
+/* --- image beside text ---------------------------------------------- */
+.split{display:grid;gap:clamp(1.6rem,4vw,3rem);grid-template-columns:1fr;
+  align-items:center}
+@media (min-width:56rem){.split{grid-template-columns:1.05fr .95fr}}
+.split--tight{margin-top:clamp(2rem,5vw,3.5rem)}
+.split__fig{margin:0}
+.split__fig img{width:100%;border-radius:var(--radius);border:1px solid var(--line);
+  aspect-ratio:4/3;object-fit:cover}
+.split__fig figcaption{margin-top:.7rem;font-size:var(--step--1);color:var(--muted)}
+.split h3{font-size:var(--step-2);margin-bottom:.7rem}
+
+.steps{list-style:none;margin:1.8rem 0 0;padding:0;display:grid;gap:1.1rem;
+  counter-reset:step}
+.steps li{position:relative;padding-left:3.2rem;counter-increment:step}
+.steps li::before{content:counter(step);position:absolute;left:0;top:.1rem;
+  width:2.3rem;height:2.3rem;border-radius:50%;background:var(--accent);
+  color:var(--accent-ink);display:grid;place-items:center;font-weight:700;
+  font-family:var(--font-display);font-size:var(--step--1)}
+.step__day{font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;
+  font-weight:700;color:var(--muted)}
+.steps h3{font-size:var(--step-1);margin:.1rem 0 .3rem}
+.steps p{color:var(--muted);font-size:var(--step--1)}
+.steps h3+p,.steps li>p:last-child{font-size:var(--step-0)}
+
+/* --- the cafe board --------------------------------------------------- */
+.board{display:grid;gap:clamp(1.6rem,4vw,2.6rem);grid-template-columns:1fr;
+  margin-top:2rem;align-items:start}
+@media (min-width:56rem){.board{grid-template-columns:1.25fr .75fr}}
+.board__list{background:var(--raised);border:1px solid var(--line);
+  border-radius:var(--radius);padding:clamp(1.2rem,3vw,2rem);
+  display:grid;gap:1.6rem}
+@media (min-width:40rem){
+  .board__list{grid-template-columns:1fr 1fr;gap:1.6rem 2.4rem}
+  .board__note{grid-column:1 / -1}
+}
+.board__grp h3{font-size:var(--step--1);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.board__note{font-size:var(--step--1);color:var(--muted);
+  border-top:1px solid var(--line);padding-top:1rem;max-width:none}
+.board__fig{margin:0}
+.board__fig img{width:100%;border-radius:var(--radius);
+  border:1px solid var(--line);aspect-ratio:3/4;object-fit:cover}
+.board__fig figcaption{margin-top:.7rem;font-size:var(--step--1);color:var(--muted)}
+
+/* --- questions -------------------------------------------------------- */
+.faq{margin-top:1.8rem;border-top:1px solid var(--line);max-width:60rem}
+.faq__item{border-bottom:1px solid var(--line)}
+.faq__item summary{display:flex;align-items:center;gap:.9rem;cursor:pointer;
+  padding:1.1rem 0;min-height:44px;font-family:var(--font-display);
+  font-weight:600;font-size:var(--step-1);list-style:none}
+.faq__item summary::-webkit-details-marker{display:none}
+.faq__item summary::before{content:"";flex:none;width:1.5rem;height:1.5rem;
+  border-radius:50%;border:2px solid var(--line-strong);
+  background:
+    linear-gradient(currentColor,currentColor) center/.7rem 2px no-repeat,
+    linear-gradient(currentColor,currentColor) center/2px .7rem no-repeat;
+  color:var(--accent);transition:transform .18s ease}
+.faq__item[open] summary::before{transform:rotate(45deg);
+  border-color:var(--accent)}
+.faq__item summary:hover{color:var(--accent)}
+.faq__a{padding:0 0 1.3rem 2.4rem}
+.faq__a p{color:var(--muted)}
+@media (prefers-reduced-motion:reduce){
+  .faq__item summary::before{transition:none}
+}
+
+/* --- merch ------------------------------------------------------------ */
+.merch{display:grid;gap:clamp(1.2rem,3vw,2rem);grid-template-columns:1fr;
+  align-items:center;margin-top:2.2rem;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(1.2rem,3vw,1.8rem)}
+@media (min-width:46rem){.merch{grid-template-columns:14rem 1fr}}
+.merch img{width:100%;border-radius:calc(var(--radius) - 4px);
+  aspect-ratio:1;object-fit:cover;border:1px solid var(--line)}
+.merch h3{font-size:var(--step-1);margin:.25rem 0 .5rem}
+.merch p{color:var(--muted)}
+.merch .btn{margin-top:1rem}
+
+/* The board's price list: name on the left, price right, one per line. */
+.items{list-style:none;margin:0;padding:0;display:grid;gap:.1rem}
+.items li{display:flex;align-items:baseline;gap:.75rem;padding:.55rem 0;
+  border-bottom:1px solid var(--line)}
+.items li:last-child{border-bottom:0}
+.items .name{flex:1;min-width:0}
+.items .price{font-variant-numeric:tabular-nums;font-weight:700;
+  white-space:nowrap;color:var(--accent)}
+
+/* --- visit ---------------------------------------------------------- */
+.cols{display:grid;gap:clamp(1.5rem,4vw,3rem);grid-template-columns:1fr;margin-top:1.8rem}
+@media (min-width:52rem){.cols{grid-template-columns:1fr 1fr}}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:1.1rem}
+.facts li{display:flex;gap:.9rem;align-items:flex-start;min-width:0}
+.facts .icon{color:var(--accent);margin-top:.2rem;width:1.4em;height:1.4em}
+.facts dt,.facts .lbl{display:block;font-size:var(--step--1);color:var(--muted);
+  text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.facts .val{font-size:var(--step-0);word-break:break-word}
+.facts a{color:var(--accent)}
+.notice{margin-top:1.6rem;padding:1.1rem 1.2rem;border-radius:var(--radius);
+  border:1px solid var(--line);background:var(--raised);font-size:var(--step--1);
+  color:var(--muted)}
+.notice strong{color:var(--fg)}
+
+/* --- footer --------------------------------------------------------- */
+.ftr{background:var(--surface);border-top:1px solid var(--line);
+  padding-block:clamp(2.5rem,5vw,3.5rem);font-size:var(--step--1)}
+.ftr__in{display:grid;gap:2rem;grid-template-columns:1fr}
+@media (min-width:52rem){.ftr__in{grid-template-columns:1.2fr 1fr 1fr}}
+.ftr h2{font-size:var(--step-1);margin-bottom:.7rem}
+.ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.ftr a{color:var(--fg)}
+.ftr a:hover{color:var(--accent)}
+.ftr__legal{margin-top:2.2rem;padding-top:1.4rem;border-top:1px solid var(--line);
+  color:var(--muted);display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+.social{display:flex;gap:.6rem;margin-top:1rem}
+.social a{display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--line-strong);
+  color:var(--fg)}
+.social a:hover{border-color:var(--accent);color:var(--accent)}
+
+
+/* --- rating chips --------------------------------------------------- */
+.navstars,.herostars{display:inline-flex;align-items:center;gap:.4rem;
+  text-decoration:none;color:var(--fg);border:1px solid var(--line-strong);
+  border-radius:999px;padding:.3rem .7rem;font-size:var(--step--1);
+  line-height:1;white-space:nowrap}
+.navstars:hover,.herostars:hover{border-color:var(--accent);color:var(--accent)}
+.navstars strong,.herostars strong{font-variant-numeric:tabular-nums;font-weight:700}
+.navstars{margin-right:auto}
+.navstars__n{color:var(--muted);font-weight:500}
+.navstars:hover .navstars__n{color:inherit}
+@media (max-width:40rem){.navstars__n{display:none}}
+.herostars{padding:.5rem 1rem;font-size:var(--step-0);min-height:44px}
+.herostars__n{color:var(--muted);font-weight:500;font-size:var(--step--1)}
+.herostars:hover .herostars__n{color:inherit}
+.hero__meta{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;margin-top:1.4rem}
+.hero__meta .status{margin-top:0}
+
+/* --- review carousel ------------------------------------------------- */
+.carou{margin-top:1.8rem}
+.carou__vp{position:relative;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+  border-radius:var(--radius)}
+.carou__vp::-webkit-scrollbar{display:none}
+.carou__track{display:flex;gap:1rem;padding:.2rem}
+.carou__slide{flex:0 0 100%;scroll-snap-align:start;min-width:0;position:relative;
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:clamp(1.2rem,3vw,1.8rem);
+  display:flex;flex-direction:column;gap:.9rem}
+@media (min-width:46rem){.carou__slide{flex-basis:calc(50% - .5rem)}}
+@media (min-width:72rem){.carou__slide{flex-basis:calc(33.333% - .667rem)}}
+.carou__slide>.stars{align-self:flex-start}
+.carou__slide blockquote{margin:0}
+.carou__slide blockquote p{font-size:var(--step-0);max-width:none}
+.carou__who{display:flex;flex-direction:column;gap:.15rem;margin-top:auto}
+.carou__who strong{font-weight:700}
+.carou__who span{font-size:var(--step--1);color:var(--muted)}
+.carou__ctl{display:flex;align-items:center;gap:.6rem;margin-top:1.1rem;flex-wrap:wrap}
+.carou__btn{width:44px;height:44px;flex:none;border-radius:50%;cursor:pointer;
+  border:1px solid var(--line-strong);background:transparent;color:var(--fg);
+  display:grid;place-items:center;padding:0}
+.carou__btn svg{width:22px;height:22px}
+.carou__btn:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.carou__btn:disabled{opacity:.4;cursor:default}
+.carou__dots{display:flex;gap:.4rem;flex-wrap:wrap;flex:1 1 auto;
+  align-items:center;min-width:0}
+.carou__dot{width:24px;height:24px;padding:0;border:0;background:none;cursor:pointer;
+  display:grid;place-items:center}
+.carou__dot::before{content:"";width:9px;height:9px;border-radius:50%;
+  background:var(--line-strong)}
+.carou__dot[aria-current="true"]::before{background:var(--accent);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 28%,transparent)}
+.carou__play{min-height:44px;padding:.5rem 1rem;border-radius:999px;cursor:pointer;
+  border:1px solid var(--line-strong);background:transparent;color:var(--fg);
+  font-family:var(--font-ui);font-size:var(--step--1);font-weight:600}
+.carou__play:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ======================================================================
+   ACCESSIBILITY TOOLBAR
+   Everything the panel draws carries .a11y-ui; every page-wide override is
+   scoped to body>*:not(.a11y-ui) so the panel never restyles its own
+   controls. The panel itself is sized in px, so Font Size cannot shrink the
+   buttons someone needs in order to undo it.
+   ====================================================================== */
+html[data-a11y-lh] body>*:not(.a11y-ui) :where(p,li,dd,dt,blockquote,figcaption,td,th,a,span,label,h1,h2,h3,h4,h5,h6)
+  {line-height:var(--a11y-lh)!important}
+html[data-a11y-ls] body>*:not(.a11y-ui) :where(p,li,dd,dt,blockquote,figcaption,td,th,a,span,label,h1,h2,h3,h4,h5,h6)
+  {letter-spacing:var(--a11y-ls)!important;word-spacing:var(--a11y-ws)!important}
+html[data-a11y-align] body>*:not(.a11y-ui) :where(p,li,dd,dt,blockquote,figcaption,h1,h2,h3,h4,h5,h6)
+  {text-align:var(--a11y-align)!important;text-wrap:wrap}
+html[data-a11y-weight] body>*:not(.a11y-ui) :where(p,li,dd,dt,blockquote,figcaption,td,th,a,span,label,h1,h2,h3,h4,h5,h6)
+  {font-weight:700!important}
+html[data-a11y-readable] body>*:not(.a11y-ui),
+html[data-a11y-readable] body>*:not(.a11y-ui) *
+  {font-family:"Atkinson Hyperlegible",Verdana,Tahoma,Arial,sans-serif!important;
+   text-transform:none!important}
+html[data-a11y-cursor] body>*:not(.a11y-ui),
+html[data-a11y-cursor] body>*:not(.a11y-ui) *
+  {cursor:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 24 24'%3E%3Cpath d='M5 1.8l14.2 10.1-6.6 1.2 3.1 6.6-3.2 1.5-3-6.7-4.5 4.4z' fill='%23000' stroke='%23fff' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") 5 3,auto!important}
+html[data-a11y-cursor] body>*:not(.a11y-ui) :where(a,button,summary,[role="button"],input,select,textarea)
+  {cursor:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 24 24'%3E%3Cpath d='M9 1.6l9.8 7-4.6.9 2.2 4.6-2.3 1-2.1-4.6-3 3z' fill='%230B51AE' stroke='%23fff' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") 8 2,pointer!important}
+
+html[data-a11y-color="mono"] body>*:not(.a11y-ui){filter:grayscale(1)!important}
+/* Both contrast modes repaint every descendant rather than re-pointing the
+   design tokens: the page has colour baked into images, masks and the glow
+   plate that a token swap would leave untouched. */
+html[data-a11y-color="light"] body>*:not(.a11y-ui),
+html[data-a11y-color="light"] body>*:not(.a11y-ui) *
+  {background-color:#FFF!important;background-image:none!important;color:#15181D!important;
+   border-color:#454C56!important;fill:#15181D!important;text-shadow:none!important;
+   box-shadow:none!important}
+html[data-a11y-color="light"]{color-scheme:light}
+html[data-a11y-color="light"] body>*:not(.a11y-ui) :where(a,a *){color:#0A3F6B!important}
+html[data-a11y-color="light"] body>*:not(.a11y-ui) :where(button,.btn,input,select,textarea)
+  {border:2px solid #15181D!important;border-radius:3px}
+html[data-a11y-color="light"] body>*:not(.a11y-ui) .star--empty{fill:#8A939F!important}
+html[data-a11y-color="light"] body>*:not(.a11y-ui) .star--full{fill:#5E3A00!important}
+html[data-a11y-color="light"] body>*:not(.a11y-ui) .carou__dot[aria-current="true"]::before
+  {background:#15181D!important}
+html[data-a11y-color="light"] body>*:not(.a11y-ui) :where(img){filter:contrast(1.1)}
+
+html[data-a11y-color="high"] body>*:not(.a11y-ui),
+html[data-a11y-color="high"] body>*:not(.a11y-ui) *
+  {background-color:#000!important;background-image:none!important;color:#FFF!important;
+   border-color:#FFF!important;fill:#FFF!important;text-shadow:none!important;
+   box-shadow:none!important}
+html[data-a11y-color="high"]{color-scheme:dark}
+html[data-a11y-color="high"] body>*:not(.a11y-ui) :where(a,a *){color:#FFE900!important}
+html[data-a11y-color="high"] body>*:not(.a11y-ui) :where(button,.btn,input,select,textarea)
+  {border:2px solid #FFF!important;border-radius:3px}
+html[data-a11y-color="high"] body>*:not(.a11y-ui) .star--empty{fill:#6A6A6A!important}
+html[data-a11y-color="high"] body>*:not(.a11y-ui) .star--full{fill:#FFE900!important}
+html[data-a11y-color="high"] body>*:not(.a11y-ui) .carou__dot[aria-current="true"]::before
+  {background:#FFE900!important}
+html[data-a11y-color="high"] body>*:not(.a11y-ui) :where(img){filter:grayscale(1) contrast(1.35)}
+
+html[data-a11y-noimg] body>*:not(.a11y-ui) :where(img,picture,video){display:none!important}
+html[data-a11y-links] body>*:not(.a11y-ui) a
+  {outline:2px solid #B3261E!important;outline-offset:2px;text-decoration:underline!important;
+   text-decoration-thickness:2px!important}
+html[data-a11y-stopmotion] body>*:not(.a11y-ui),
+html[data-a11y-stopmotion] body>*:not(.a11y-ui) *
+  {animation:none!important;transition:none!important;scroll-behavior:auto!important}
+.a11y-spot{outline:3px solid #0B51AE!important;outline-offset:3px;
+  background:rgba(11,81,174,.09)!important}
+.a11y-rule{position:fixed;left:0;right:0;height:5px;background:#B3261E;
+  box-shadow:0 0 0 1px #fff;z-index:2147483000;pointer-events:none;display:none}
+.a11y-mask{position:fixed;left:0;right:0;background:rgba(0,0,0,.78);
+  z-index:2147482999;pointer-events:none;display:none}
+
+/* ---- launcher, bottom left ---- */
+.a11y-fab{position:fixed;z-index:2147483100;
+  left:calc(16px + env(safe-area-inset-left,0px));
+  bottom:calc(16px + env(safe-area-inset-bottom,0px));
+  width:56px;height:56px;border-radius:50%;border:2px solid #fff;
+  background:#0B51AE;color:#fff;cursor:pointer;display:grid;place-items:center;
+  box-shadow:0 6px 20px rgba(4,18,40,.42);padding:0}
+.a11y-fab svg{width:30px;height:30px;fill:#fff}
+.a11y-fab:hover{background:#083E86}
+.a11y-fab:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+/* ---- panel ---- */
+.a11y{position:fixed;z-index:2147483200;
+  left:calc(16px + env(safe-area-inset-left,0px));
+  bottom:calc(16px + env(safe-area-inset-bottom,0px));
+  width:min(404px,calc(100vw - 24px));max-height:min(88vh,780px);
+  display:flex;flex-direction:column;border-radius:18px;overflow:hidden;
+  background:#EEF1F5;box-shadow:0 18px 56px rgba(4,18,40,.45);
+  font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  color:#15181D;line-height:1.4}
+.a11y[hidden]{display:none}
+.a11y__head{position:relative;background:#0B51AE;color:#fff;
+  padding:20px 18px 24px;text-align:center}
+.a11y__x{position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.14);color:#fff;
+  font-size:26px;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0;
+  font-family:inherit}
+.a11y__x:hover{background:rgba(255,255,255,.3)}
+.a11y__x:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.a11y__mark{width:52px;height:52px;border-radius:50%;background:#fff;
+  display:inline-grid;place-items:center;margin-bottom:10px}
+.a11y__mark svg{width:30px;height:30px;fill:#0B51AE}
+.a11y h2{font-family:inherit;font-size:25px;line-height:1.15;font-weight:700;margin:0;
+  letter-spacing:-.01em;color:#fff}
+.a11y__sub{margin:6px 0 0;font-size:14px;color:#D7E6FA;max-width:none}
+.a11y__hide{background:none;border:0;color:#fff;font:inherit;text-decoration:underline;
+  cursor:pointer;padding:2px 4px;border-radius:4px}
+.a11y__hide:hover{background:rgba(255,255,255,.2)}
+.a11y__hide:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.a11y__body{flex:1 1 auto;overflow-y:auto;overscroll-behavior:contain;
+  padding:12px;display:flex;flex-direction:column;gap:12px}
+.a11y__grp{background:#FFFFFF;border-radius:14px;padding:14px}
+.a11y h3{font-family:inherit;font-size:17px;font-weight:700;margin:0 0 11px;
+  color:#15181D;line-height:1.3}
+.a11y__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.a11y__tile,.a11y__step{background:#F2F5F9;border:1px solid #646C78;
+  border-radius:11px;min-height:104px;padding:11px 7px;color:#15181D;
+  font:500 13px/1.3 inherit;text-align:center}
+.a11y__tile{display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:9px;cursor:pointer}
+.a11y__tile svg{width:21px;height:21px;fill:none;stroke:#15181D;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round}
+.a11y__ic{width:42px;height:42px;border-radius:50%;background:#fff;display:grid;
+  place-items:center;border:1px solid #646C78;flex:none}
+.a11y__tile:hover{background:#E2EAF5;border-color:#15181D}
+.a11y__tile[aria-pressed="true"]{border:2px solid #0B51AE;background:#DCE8F8;
+  padding:10px 6px}
+.a11y__tile[aria-pressed="true"] .a11y__ic{background:#0B51AE;border-color:#0B51AE}
+.a11y__tile[aria-pressed="true"] svg{stroke:#fff}
+.a11y__tile:focus-visible,.a11y__sbtn:focus-visible,.a11y__reset:focus-visible,
+.a11y__out:focus-visible{outline:3px solid #15181D;outline-offset:2px}
+.a11y__step{grid-column:span 2;display:flex;flex-direction:column;
+  justify-content:center;gap:11px}
+.a11y__step>span{font-size:15px;font-weight:600}
+.a11y__row{display:flex;align-items:center;gap:8px}
+.a11y__sbtn{width:40px;height:40px;flex:none;border-radius:50%;border:0;
+  background:#0B51AE;color:#fff;cursor:pointer;display:grid;place-items:center;padding:0}
+.a11y__sbtn:hover{background:#083E86}
+.a11y__sbtn svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2.6;
+  stroke-linecap:round}
+.a11y__out{flex:1 1 auto;background:#fff;border:1px solid #646C78;border-radius:7px;
+  padding:9px 4px;font-size:14px;font-weight:600;text-align:center;min-width:0}
+.a11y__reset{width:100%;border:0;border-radius:11px;background:#0B51AE;color:#fff;
+  font:700 16px/1 inherit;padding:16px;cursor:pointer;flex:none}
+.a11y__reset:hover{background:#083E86}
+.a11y__note{margin:0;font-size:12px;color:#454C56;text-align:center;
+  padding:0 4px 2px;max-width:none}
+@media print{.a11y-root,.skip{display:none}}
+</style>
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "CafeOrCoffeeShop",
+ "name": "Afternoon Roasting",
+ "alternateName": "Afternoon Coffee",
+ "url": "https://afternoonroasting.com/",
+ "email": "afternoonroasting@gmail.com",
+ "image": "assets/img/icon-512.png",
+ "priceRange": "$1\u201310",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "619 S Main St, Unit 5",
+  "addressLocality": "Gainesville",
+  "addressRegion": "FL",
+  "postalCode": "32601",
+  "addressCountry": "US"
+ },
+ "openingHours": "Mo-Su 07:30-15:00",
+ "servesCuisine": [
+  "Coffee",
+  "Espresso",
+  "Matcha"
+ ],
+ "makesOffer": [
+  {
+   "@type": "Offer",
+   "itemOffered": {
+    "@type": "Product",
+    "name": "Always Blend"
+   },
+   "price": "18",
+   "priceCurrency": "USD",
+   "url": "https://afternoonroasting.com/products/always-blend"
+  },
+  {
+   "@type": "Offer",
+   "itemOffered": {
+    "@type": "Product",
+    "name": "Ethiopia Duromina Organic"
+   },
+   "price": "20",
+   "priceCurrency": "USD",
+   "url": "https://afternoonroasting.com/products/ethiopia-duromina"
+  },
+  {
+   "@type": "Offer",
+   "itemOffered": {
+    "@type": "Product",
+    "name": "Ethiopia Kembata Natural"
+   },
+   "price": "20",
+   "priceCurrency": "USD",
+   "url": "https://afternoonroasting.com/products/ethiopia-kembata-natural-process"
+  },
+  {
+   "@type": "Offer",
+   "itemOffered": {
+    "@type": "Product",
+    "name": "Mexico Oaxaca San Pedro Yosotatu"
+   },
+   "price": "19",
+   "priceCurrency": "USD",
+   "url": "https://afternoonroasting.com/products/mexico-oaxaca-copy"
+  },
+  {
+   "@type": "Offer",
+   "itemOffered": {
+    "@type": "Product",
+    "name": "Grow Hub Dark Roast"
+   },
+   "price": "18",
+   "priceCurrency": "USD",
+   "url": "https://afternoonroasting.com/products/grow-hub-dark-roast"
+  },
+  {
+   "@type": "Offer",
+   "itemOffered": {
+    "@type": "Product",
+    "name": "Half Caff"
+   },
+   "price": "18",
+   "priceCurrency": "USD",
+   "url": "https://afternoonroasting.com/products/half-caff"
+  },
+  {
+   "@type": "Offer",
+   "itemOffered": {
+    "@type": "Product",
+    "name": "Decaf Colombia Valle del Cauca"
+   },
+   "price": "18",
+   "priceCurrency": "USD",
+   "url": "https://afternoonroasting.com/products/decaf"
+  }
+ ],
+ "aggregateRating": {
+  "@type": "AggregateRating",
+  "ratingValue": 4.6,
+  "reviewCount": 80
+ },
+ "sameAs": [
+  "https://www.instagram.com/afternoon__coffee/"
+ ],
+ "publicAccess": true
+}</script>
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Where does the coffee come from?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Green coffee is sourced through three importers &mdash; Genuine Origin, Red Fox Coffee Merchants and Royal Coffee NYC &mdash; and roasted here in Gainesville."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "I ordered coffee. When will it arrive?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Roasting happens on Mondays and orders ship on Tuesdays, by USPS Priority 2-Day Express or UPS Ground Advantage. Tracking follows by email."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I pick my order up instead?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes &mdash; at the roastery on Tuesdays between 9 and 5. If you cannot make that window, get in touch and it will be worked out."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do you deliver locally?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Free local delivery on Wednesdays, anywhere within four miles of the roastery."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "I want to serve your coffee at my restaurant, cafe or bar.",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Wholesale is open. Email <a href=\"mailto:afternoonroasting@gmail.com\">afternoonroasting@gmail.com</a> and the conversation starts there."
+   }
+  }
+ ]
+}</script>
+</head>
+<body>
+<a class="skip" href="#main-content">Skip to main content</a>
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a class="hdr__logo" href="#top">
+      <span class="mark"><img src="assets/img/daisy-disc.png" alt="" width="96" height="96" decoding="async"><span class="mark__txt"><b>afternoon</b><i>roasting</i></span></span><span class="sr-only">Afternoon Roasting home</span>
+    </a>
+    <a class="navstars" href="#reviews"><svg class="stars" width="65" height="13" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip4613"><rect x="0" y="0" width="110.40" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip4613)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><strong>4.6</strong><span class="navstars__n">Google</span><span class="sr-only">out of 5, from 80 Google reviews. Read the reviews.</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#coffee">Coffee</a>
+      <a href="#cafe">Cafe</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn--ig" href="https://www.instagram.com/afternoon__coffee/">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.22 1 .48 1.4.9.43.43.7.83.91 1.4.17.42.37 1.04.42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.05 1.2-.25 1.8-.42 2.2a3.8 3.8 0 01-.9 1.4c-.44.43-.84.7-1.41.91-.42.17-1.04.37-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.05-1.8-.25-2.2-.42a3.8 3.8 0 01-1.4-.9 3.8 3.8 0 01-.91-1.41c-.17-.42-.37-1.04-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.2.25-1.8.42-2.2.22-.6.48-1 .9-1.4.43-.43.83-.7 1.4-.91.42-.17 1.04-.37 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.8.07-1.1.05-1.7.24-2.1.4-.5.2-.9.44-1.3.84-.4.4-.64.8-.84 1.3-.16.4-.35 1-.4 2.1-.06 1.3-.07 1.7-.07 4.8s0 3.5.07 4.8c.05 1.1.24 1.7.4 2.1.2.5.44.9.84 1.3.4.4.8.64 1.3.84.4.16 1 .35 2.1.4 1.3.06 1.7.07 4.8.07s3.5 0 4.8-.07c1.1-.05 1.7-.24 2.1-.4.5-.2.9-.44 1.3-.84.4-.4.64-.8.84-1.3.16-.4.35-1 .4-2.1.06-1.3.07-1.7.07-4.8s0-3.5-.07-4.8c-.05-1.1-.24-1.7-.4-2.1-.2-.5-.44-.9-.84-1.3-.4-.4-.8-.64-1.3-.84-.4-.16-1-.35-2.1-.4C15.5 4 15.1 4 12 4z"></path><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.25A3.25 3.25 0 1112 8.75a3.25 3.25 0 010 6.5z"></path><circle cx="17.25" cy="6.75" r="1.2"></circle></svg><span>@afternoon__coffee</span>
+    </a>
+    <a class="btn btn--solid" href="https://afternoonroasting.com/collections/all">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 7V6a5 5 0 0110 0v1h3.1a1 1 0 011 1.1l-1.3 12a2 2 0 01-2 1.9H6.2a2 2 0 01-2-1.8l-1.3-12A1 1 0 013.9 7H7zm2 0h6V6a3 3 0 00-6 0v1z"></path></svg><span>Shop coffee</span>
+    </a>
+  </div>
+</header>
+<main id="main-content">
+
+<section class="hero" id="top" aria-labelledby="hero-heading">
+  <div class="wrap hero__in">
+    <div>
+      <p class="eyebrow">Gainesville, Florida &middot; since the shop on South Main</p>
+      <h1 id="hero-heading">Roasted Monday.<br><em>Shipped Tuesday.</em></h1>
+      <p class="hero__lede">A microscopic roaster and coffeeshop giving it our
+        all to source, roast and serve the finest coffees. Seven bags on the
+        shelf, an espresso bar at 619&nbsp;S&nbsp;Main, and coffee that reaches
+        you days old rather than months.</p>
+      <div class="hero__meta">
+        <a class="herostars" href="#reviews"><svg class="stars" width="85" height="17" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip4617"><rect x="0" y="0" width="110.40" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip4617)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><strong>4.6</strong><span class="herostars__n">80 Google reviews</span><span class="sr-only">out of 5, from 80 Google reviews. Read the reviews.</span></a>
+        <p class="status" id="status" data-open="unknown">
+          <span class="status__dot" aria-hidden="true"></span>
+          <span class="status__text">Open daily, 7:30 AM – 3 PM</span>
+        </p>
+      </div>
+      <div class="hero__cta">
+        <a class="btn btn--solid" href="#coffee">See the coffee</a>
+        <a class="btn btn--ghost" href="#visit">Visit the cafe</a>
+      </div>
+    </div>
+    <div class="hero__art"><img src="assets/img/shop/daisy-latte.jpg" alt="A latte in an Afternoon Coffee Co. cup, its foam dusted through a daisy stencil in cocoa." width="1054" height="1400" loading="eager" decoding="async" style="object-position:50% 40%"><img src="assets/img/roastery/drum.jpg" alt="Roasted coffee tumbling out of the drum into the cooling tray, with the roaster watching the drop." width="1400" height="1400" loading="lazy" decoding="async"><img src="assets/img/shop/flag-day.jpg" alt="A tall black feather flag reading COFFEE with an arrow, planted on the grass outside the white building." width="1050" height="1400" loading="lazy" decoding="async"></div>
+  </div>
+</section>
+
+<section class="band" id="coffee" aria-labelledby="coffee-heading">
+  <div class="wrap">
+    <h2 id="coffee-heading">On the shelf</h2>
+    <p class="lede">Seven coffees, roasted in small batches on South Main. Every
+      bag is roasted the Monday before it ships, so what arrives is days old,
+      not months. Buying happens on our shop.</p>
+    <div class="shelf">
+      <article class="bag">
+        <img class="bag__img" src="assets/img/bags/always.jpg" alt="The Always Blend bag, a cream pouch with a red Always sticker, on a bright yellow ground."
+             width="900" height="900" loading="lazy" decoding="async">
+        <div class="bag__body">
+          <p class="bag__kind">Signature blend</p>
+          <h3>Always Blend</h3>
+          <p class="bag__profile">Chocolate · Dark fruit · Juicy</p>
+          <p class="bag__note">The house blend, and the one pulled as espresso at the cafe. Rich, sweet and balanced, with a heavy body and a long finish. Makes an excellent cup of drip coffee too.</p>
+          
+          <dl class="bag__facts"><div><dt>Coffees</dt><dd>Colombia, Costa Rica, Ethiopia</dd></div><div><dt>Processing</dt><dd>Washed &amp; natural</dd></div></dl>
+          <ul class="bag__prices"><li><span class="bag__size">300 g</span><span class="bag__price">$18</span></li><li><span class="bag__size">2.5 lb</span><span class="bag__price">$52</span></li><li><span class="bag__size">5 lb</span><span class="bag__price">$104</span></li></ul>
+          <a class="btn btn--solid bag__buy" href="https://afternoonroasting.com/products/always-blend">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 7V6a5 5 0 0110 0v1h3.1a1 1 0 011 1.1l-1.3 12a2 2 0 01-2 1.9H6.2a2 2 0 01-2-1.8l-1.3-12A1 1 0 013.9 7H7zm2 0h6V6a3 3 0 00-6 0v1z"></path></svg><span>Buy a bag</span>
+            <span class="sr-only"> of Always Blend</span></a>
+        </div>
+      </article>
+      <article class="bag">
+        <img class="bag__img" src="assets/img/bags/duromina.jpg" alt="The Ethiopia Duromina bag, printed with a wildflower drawing, on a pale blue ground."
+             width="900" height="900" loading="lazy" decoding="async">
+        <div class="bag__body">
+          <p class="bag__kind">Single origin · Floral</p>
+          <h3>Ethiopia Duromina Organic</h3>
+          <p class="bag__profile">Honey · Candied citrus</p>
+          <p class="bag__note">A washed Agaro coffee from Red Fox Coffee Merchants, roasted light-medium to keep the florals on top.</p>
+          
+          <dl class="bag__facts"><div><dt>Region</dt><dd>Agaro</dd></div><div><dt>Variety</dt><dd>Ethiopia landraces</dd></div><div><dt>Processing</dt><dd>Washed</dd></div><div><dt>Altitude</dt><dd>1,850–2,000 masl</dd></div><div><dt>Roast</dt><dd>Light-medium</dd></div></dl>
+          <ul class="bag__prices"><li><span class="bag__size">300 g</span><span class="bag__price">$20</span></li><li><span class="bag__size">2.5 lb</span><span class="bag__price">$60</span></li><li><span class="bag__size">5 lb</span><span class="bag__price">$120</span></li></ul>
+          <a class="btn btn--solid bag__buy" href="https://afternoonroasting.com/products/ethiopia-duromina">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 7V6a5 5 0 0110 0v1h3.1a1 1 0 011 1.1l-1.3 12a2 2 0 01-2 1.9H6.2a2 2 0 01-2-1.8l-1.3-12A1 1 0 013.9 7H7zm2 0h6V6a3 3 0 00-6 0v1z"></path></svg><span>Buy a bag</span>
+            <span class="sr-only"> of Ethiopia Duromina Organic</span></a>
+        </div>
+      </article>
+      <article class="bag">
+        <img class="bag__img" src="assets/img/bags/kembata.jpg" alt="The Ethiopia Kembata bag, printed with a strawberry, on a bright red ground."
+             width="900" height="900" loading="lazy" decoding="async">
+        <div class="bag__body">
+          <p class="bag__kind">Single origin · Fruity</p>
+          <h3>Ethiopia Kembata Natural</h3>
+          <p class="bag__profile">Strawberry · Blackberry · Pomegranate</p>
+          <p class="bag__note">Grown at 2,050 metres in the Durame village of Kembata and dried on the fruit. The loudest coffee on the shelf.</p>
+          
+          <dl class="bag__facts"><div><dt>Region</dt><dd>Kembata</dd></div><div><dt>Variety</dt><dd>Ethiopia heirloom</dd></div><div><dt>Processing</dt><dd>Natural</dd></div><div><dt>Altitude</dt><dd>2,050 masl</dd></div><div><dt>Roast</dt><dd>Light-medium</dd></div></dl>
+          <ul class="bag__prices"><li><span class="bag__size">300 g</span><span class="bag__price">$20</span></li><li><span class="bag__size">2.5 lb</span><span class="bag__price">$60</span></li><li><span class="bag__size">5 lb</span><span class="bag__price">$120</span></li></ul>
+          <a class="btn btn--solid bag__buy" href="https://afternoonroasting.com/products/ethiopia-kembata-natural-process">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 7V6a5 5 0 0110 0v1h3.1a1 1 0 011 1.1l-1.3 12a2 2 0 01-2 1.9H6.2a2 2 0 01-2-1.8l-1.3-12A1 1 0 013.9 7H7zm2 0h6V6a3 3 0 00-6 0v1z"></path></svg><span>Buy a bag</span>
+            <span class="sr-only"> of Ethiopia Kembata Natural</span></a>
+        </div>
+      </article>
+      <article class="bag">
+        <img class="bag__img" src="assets/img/bags/mexico.jpg" alt="The Mexico Oaxaca bag, printed with a small landscape drawing, on an orange ground."
+             width="900" height="900" loading="lazy" decoding="async">
+        <div class="bag__body">
+          <p class="bag__kind">Single origin · Mild</p>
+          <h3>Mexico Oaxaca San Pedro Yosotatu</h3>
+          <p class="bag__profile">Key lime · Toasted almond · Brown sugar</p>
+          <p class="bag__note">From the community of San Pedro Yosotatu in Oaxaca, through Red Fox Coffee Merchants. An easy, sweet medium roast.</p>
+          
+          <dl class="bag__facts"><div><dt>Region</dt><dd>Oaxaca</dd></div><div><dt>Variety</dt><dd>Pluma, Bourbon, Typica</dd></div><div><dt>Processing</dt><dd>Washed</dd></div><div><dt>Altitude</dt><dd>1,700–1,900 masl</dd></div><div><dt>Roast</dt><dd>Medium</dd></div></dl>
+          <ul class="bag__prices"><li><span class="bag__size">300 g</span><span class="bag__price">$19</span></li><li><span class="bag__size">2.5 lb</span><span class="bag__price">$58</span></li><li><span class="bag__size">5 lb</span><span class="bag__price">$115</span></li></ul>
+          <a class="btn btn--solid bag__buy" href="https://afternoonroasting.com/products/mexico-oaxaca-copy">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 7V6a5 5 0 0110 0v1h3.1a1 1 0 011 1.1l-1.3 12a2 2 0 01-2 1.9H6.2a2 2 0 01-2-1.8l-1.3-12A1 1 0 013.9 7H7zm2 0h6V6a3 3 0 00-6 0v1z"></path></svg><span>Buy a bag</span>
+            <span class="sr-only"> of Mexico Oaxaca San Pedro Yosotatu</span></a>
+        </div>
+      </article>
+      <article class="bag">
+        <img class="bag__img" src="assets/img/bags/grow-hub.jpg" alt="The Grow Hub Dark Roast bag, printed with a garden scene, on a turquoise ground."
+             width="900" height="900" loading="lazy" decoding="async">
+        <div class="bag__body">
+          <p class="bag__kind">Collaboration · Dark</p>
+          <h3>Grow Hub Dark Roast</h3>
+          <p class="bag__profile">Bittersweet chocolate · Toasted nuts</p>
+          <p class="bag__note">A longer, hotter roast for sweetness and body &mdash; classic dark, never smoky. Made with Grow Hub, the Gainesville non-profit plant nursery that employs adults living with disabilities. $1 from every bag goes to them.</p>
+          <p class="bag__flag">$1 a bag to Grow Hub</p>
+          <dl class="bag__facts"><div><dt>Coffees</dt><dd>Central and South America</dd></div><div><dt>Processing</dt><dd>Washed</dd></div><div><dt>Roast</dt><dd>Dark</dd></div></dl>
+          <ul class="bag__prices"><li><span class="bag__size">300 g</span><span class="bag__price">$18</span></li><li><span class="bag__size">2.5 lb</span><span class="bag__price">$52</span></li><li><span class="bag__size">5 lb</span><span class="bag__price">$104</span></li></ul>
+          <a class="btn btn--solid bag__buy" href="https://afternoonroasting.com/products/grow-hub-dark-roast">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 7V6a5 5 0 0110 0v1h3.1a1 1 0 011 1.1l-1.3 12a2 2 0 01-2 1.9H6.2a2 2 0 01-2-1.8l-1.3-12A1 1 0 013.9 7H7zm2 0h6V6a3 3 0 00-6 0v1z"></path></svg><span>Buy a bag</span>
+            <span class="sr-only"> of Grow Hub Dark Roast</span></a>
+        </div>
+      </article>
+      <article class="bag">
+        <img class="bag__img" src="assets/img/bags/half-caff.jpg" alt="The Half Caff bag, printed with a green Half Caff stamp, on a pale blue ground."
+             width="900" height="900" loading="lazy" decoding="async">
+        <div class="bag__body">
+          <p class="bag__kind">Blend · Half decaf</p>
+          <h3>Half Caff</h3>
+          <p class="bag__profile">Graham cracker · Molasses</p>
+          <p class="bag__note">For anyone who wants a second cup in the afternoon without paying for it at 11 PM.</p>
+          
+          <dl class="bag__facts"><div><dt>Coffees</dt><dd>Guatemala, Costa Rica, Colombia</dd></div><div><dt>Processing</dt><dd>Washed, sugar cane decaffeination</dd></div></dl>
+          <ul class="bag__prices"><li><span class="bag__size">300 g</span><span class="bag__price">$18</span></li><li><span class="bag__size">2.5 lb</span><span class="bag__price">$52</span></li><li><span class="bag__size">5 lb</span><span class="bag__price">$104</span></li></ul>
+          <a class="btn btn--solid bag__buy" href="https://afternoonroasting.com/products/half-caff">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 7V6a5 5 0 0110 0v1h3.1a1 1 0 011 1.1l-1.3 12a2 2 0 01-2 1.9H6.2a2 2 0 01-2-1.8l-1.3-12A1 1 0 013.9 7H7zm2 0h6V6a3 3 0 00-6 0v1z"></path></svg><span>Buy a bag</span>
+            <span class="sr-only"> of Half Caff</span></a>
+        </div>
+      </article>
+      <article class="bag">
+        <img class="bag__img" src="assets/img/bags/decaf.jpg" alt="The Decaf Colombia bag, printed with a circular Decaf seal, on a pale pink ground."
+             width="900" height="900" loading="lazy" decoding="async">
+        <div class="bag__body">
+          <p class="bag__kind">Single origin · Decaf</p>
+          <h3>Decaf Colombia Valle del Cauca</h3>
+          <p class="bag__profile">Milk chocolate · Walnut · Creamy</p>
+          <p class="bag__note">Banana bread and chocolate, silky body, low acidity. Decaffeinated in Colombia with sugar-cane ethyl acetate, which takes out 97% of the caffeine and leaves the sugars alone.</p>
+          
+          <dl class="bag__facts"><div><dt>Region</dt><dd>Valle del Cauca</dd></div><div><dt>Variety</dt><dd>Caturra, Castillo</dd></div><div><dt>Processing</dt><dd>Washed &amp; EA decaffeination</dd></div><div><dt>Altitude</dt><dd>1,750 masl</dd></div></dl>
+          <ul class="bag__prices"><li><span class="bag__size">300 g</span><span class="bag__price">$18</span></li><li><span class="bag__size">1 lb</span><span class="bag__price">$22</span></li><li><span class="bag__size">5 lb</span><span class="bag__price">$110</span></li></ul>
+          <a class="btn btn--solid bag__buy" href="https://afternoonroasting.com/products/decaf">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 7V6a5 5 0 0110 0v1h3.1a1 1 0 011 1.1l-1.3 12a2 2 0 01-2 1.9H6.2a2 2 0 01-2-1.8l-1.3-12A1 1 0 013.9 7H7zm2 0h6V6a3 3 0 00-6 0v1z"></path></svg><span>Buy a bag</span>
+            <span class="sr-only"> of Decaf Colombia Valle del Cauca</span></a>
+        </div>
+      </article></div>
+
+    <div class="club">
+      <div>
+        <p class="bag__kind">Subscription</p>
+        <h3>Afternoon Coffee Club</h3>
+        <p>A rotating selection at the lowest single-origin price, as often as you like &mdash; whatever is being loved at the moment. Pick the quantity, the frequency and the grind. Ships, or collect it at the roastery. Gifting is just the recipient's address in the shipping field.</p>
+        <p class="club__price">From $18 &middot; ship it or collect it</p>
+      </div>
+      <a class="btn btn--solid" href="https://afternoonroasting.com/products/coffee-subscription">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 6a1 1 0 011-1h10a1 1 0 011 1v2h2.6a2 2 0 011.7.94l1.4 2.3a2 2 0 01.3 1.05V16a1 1 0 01-1 1h-1.2a3 3 0 01-5.6 0H9.8a3 3 0 01-5.6 0H3a1 1 0 01-1-1V6zm12 4v3.6a3 3 0 012.9.4H20v-2.1L18.6 10H14zM7 15.5a1.4 1.4 0 102.8 0 1.4 1.4 0 00-2.8 0zm7.6 0a1.4 1.4 0 102.8 0 1.4 1.4 0 00-2.8 0z"></path></svg><span>Join the club</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="band band--surface" id="how" aria-labelledby="how-heading">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <h2 id="how-heading">How a bag gets to you</h2>
+        <p class="lede">Green coffee comes through Genuine Origin, Red Fox
+          Coffee Merchants and Royal Coffee NYC. Everything after that happens
+          here.</p>
+        <ol class="steps"><li><p class="step__day">Monday</p><h3>Roasting day</h3><p>Everything goes through the drum in small batches. Every order is roasted the Monday before it leaves, not pulled off a shelf.</p></li><li><p class="step__day">Tuesday</p><h3>Orders ship</h3><p>Out the door by USPS Priority 2-Day Express or UPS Ground Advantage, with tracking, so you can follow the bag.</p></li><li><p class="step__day">Tuesday</p><h3>Or collect it</h3><p>Pickup at the roastery between 9 and 5. If that window does not work, say so and it gets worked out.</p></li><li><p class="step__day">Wednesday</p><h3>Local delivery</h3><p>Free, within four miles of the roastery.</p></li></ol>
+      </div>
+      <figure class="split__fig">
+        <img src="assets/img/roastery/origin-oaxaca.jpg" alt="Two people stacking sacks of green coffee on a drying patio in Oaxaca."
+             width="1050" height="1400" loading="lazy" decoding="async">
+        <figcaption>Green coffee on the patio at origin, before any of it
+          reaches South Main.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="cafe" aria-labelledby="cafe-heading">
+  <div class="wrap">
+    <h2 id="cafe-heading">The cafe at 619 S Main</h2>
+    <p class="lede">Afternoon Coffee is the shopfront half of this: an espresso
+      bar, a garden to sit in, and a case of Swallowtail Farm beef, dairy and
+      cut flowers alongside the coffee. Open every day, 7:30&nbsp;AM to
+      3&nbsp;PM.</p>
+    <div class="board">
+      <div class="board__list"><div class="board__grp"><h3>Espresso</h3><ul class="items"><li><span class="name">Americano</span><span class="price">$3</span></li><li><span class="name">Shot</span><span class="price">$3</span></li><li><span class="name">Cappuccino</span><span class="price">$4</span></li><li><span class="name">Cortado</span><span class="price">$4</span></li><li><span class="name">Latte</span><span class="price">$5</span></li><li><span class="name">Mocha</span><span class="price">$6</span></li></ul></div><div class="board__grp"><h3>Coffee</h3><ul class="items"><li><span class="name">Strong drip</span><span class="price">$2.50 / $3</span></li><li><span class="name">Cold brew</span><span class="price">$5</span></li></ul></div><div class="board__grp"><h3>Matcha</h3><ul class="items"><li><span class="name">Matcha latte</span><span class="price">$6</span></li></ul></div><div class="board__grp"><h3>Syrups</h3><ul class="items"><li><span class="name">Vanilla, caramel, lavender, chocolate</span><span class="price">$1</span></li></ul></div>
+        <p class="board__note">Prices as painted on the board in the shop.
+          Specials &mdash; the matcha, the affogato, whatever is on the pastry
+          plate &mdash; change and are not listed here.</p>
+      </div>
+      <figure class="board__fig">
+        <img src="assets/img/shop/menu-board.jpg" alt="The cafe's arched black menu board, listing espresso, coffee, matcha and syrups in white lettering."
+             width="1050" height="1400" loading="lazy" decoding="async">
+        <figcaption>The board, as it hangs.</figcaption>
+      </figure>
+    </div>
+
+    <div class="split split--tight">
+      <figure class="split__fig">
+        <img src="assets/img/shop/farm-board.jpg" alt="A chalkboard over the chest freezer listing Swallowtail Farm grassfed beef and dairy by the cut, with prices per pound."
+             width="1400" height="1050" loading="lazy" decoding="async">
+      </figure>
+      <div>
+        <h3>Not only coffee</h3>
+        <p>The freezer and the counter carry Swallowtail Farm grassfed beef and
+          dairy by the cut, and there are fresh flowers most weeks. It is worth
+          asking what came in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band--surface" id="reviews" aria-labelledby="reviews-heading">
+  <div class="wrap">
+    <h2 id="reviews-heading">What people say</h2>
+    <div class="rating">
+      <div class="rating__main">
+        <svg class="stars" width="120" height="24" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip4624"><rect x="0" y="0" width="110.40" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip4624)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg>
+        <div>
+          <p class="rating__num">4.6<span class="sr-only"> out of 5</span></p>
+          <p class="rating__meta">80 Google reviews</p>
+        </div>
+      </div>
+      <div class="rating__rule" aria-hidden="true"></div>
+      <div class="rating__side">
+        <span>Reviews below are five-star ones, posted publicly on the
+          Afternoon Coffee Google listing.</span>
+        <a href="https://www.google.com/maps/place/?q=place_id:ChIJIfI8S2uj6IgRZp7PWG9bGO8">Read all 80 on Google</a>
+      </div>
+    </div>
+
+    <div class="carou" data-carousel>
+      <div class="carou__vp" data-vp tabindex="0" role="group"
+           aria-roledescription="carousel" aria-label="Reviews from Google">
+        <div class="carou__track" data-track><div class="carou__slide" role="group" aria-roledescription="slide" aria-label="Review 1 of 12"><svg class="stars" width="75" height="15" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip5015"><rect x="0" y="0" width="120.00" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip5015)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><span class="sr-only">5 out of 5.</span><blockquote><p>Best coffee shop in Gainesville! Love coming by Afternoon Coffee to either pick up coffee, freshly roasted beans, or to sit and enjoy the garden outside. Great place to come get some work done, especially when the weather cools down.</p></blockquote><p class="carou__who"><strong>Zachary Bautista</strong><span>2 months ago</span></p></div><div class="carou__slide" role="group" aria-roledescription="slide" aria-label="Review 2 of 12"><svg class="stars" width="75" height="15" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip5015"><rect x="0" y="0" width="120.00" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip5015)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><span class="sr-only">5 out of 5.</span><blockquote><p>I ordered an Iced Mocha and a Butter biscuit at this adorable spot. The coffee is high quality and really helped me get the second wind of the day. The staff were friendly and quick with the order.</p></blockquote><p class="carou__who"><strong>YaoMing Li</strong><span>3 weeks ago</span></p></div><div class="carou__slide" role="group" aria-roledescription="slide" aria-label="Review 3 of 12"><svg class="stars" width="75" height="15" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip5015"><rect x="0" y="0" width="120.00" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip5015)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><span class="sr-only">5 out of 5.</span><blockquote><p>Enjoyed the sparkling mango matcha. Found the mix refreshing, balanced and delicious. Cute little spot with a crew that is on top of it and well engaged with each customer.</p></blockquote><p class="carou__who"><strong>Neal Winsomer</strong><span>2 months ago</span></p></div><div class="carou__slide" role="group" aria-roledescription="slide" aria-label="Review 4 of 12"><svg class="stars" width="75" height="15" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip5015"><rect x="0" y="0" width="120.00" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip5015)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><span class="sr-only">5 out of 5.</span><blockquote><p>Great coffee and service. We go there every weekend and miss it when we are out of town. It is a short walk from Depot Park, which makes it very convenient. We love their affogato, cappuccino and iced latte.</p></blockquote><p class="carou__who"><strong>claudia arias</strong><span>9 months ago</span></p></div><div class="carou__slide" role="group" aria-roledescription="slide" aria-label="Review 5 of 12"><svg class="stars" width="75" height="15" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip5015"><rect x="0" y="0" width="120.00" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip5015)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><span class="sr-only">5 out of 5.</span><blockquote><p>Excellent, incredible, amazing! The espresso rocks. The tea is delicious. I love that they have local meats, dairy and flowers that makes them even cooler. And the outdoor area is so relaxing!</p></blockquote><p class="carou__who"><strong>Madison Harrison</strong><span>7 months ago</span></p></div><div class="carou__slide" role="group" aria-roledescription="slide" aria-label="Review 6 of 12"><svg class="stars" width="75" height="15" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip5015"><rect x="0" y="0" width="120.00" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip5015)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><span class="sr-only">5 out of 5.</span><blockquote><p>Every time I come in for coffee and sometimes a pastry or sandwich, the service is excellent, quick and friendly! The iced latte's slight foam from shaking to mix, instead of stirring, is genius and a true delight.</p></blockquote><p class="carou__who"><strong>Veritie Roueche</strong><span>6 months ago</span></p></div><div class="carou__slide" role="group" aria-roledescription="slide" aria-label="Review 7 of 12"><svg class="stars" width="75" height="15" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip5015"><rect x="0" y="0" width="120.00" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip5015)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><span class="sr-only">5 out of 5.</span><blockquote><p>Not only is the coffee superb &mdash; I got a perfectly crafted latte and loved it &mdash; but the place is very well maintained. Everything orderly and very clean. Highly recommend!</p></blockquote><p class="carou__who"><strong>Jake Rose</strong><span>9 months ago</span></p></div><div class="carou__slide" role="group" aria-roledescription="slide" aria-label="Review 8 of 12"><svg class="stars" width="75" height="15" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip5015"><rect x="0" y="0" width="120.00" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip5015)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><span class="sr-only">5 out of 5.</span><blockquote><p>Friendly staff, excellent coffee and great fresh farm products. Baked goods are excellent too. If you're familiar with Afternoon, then you know what to expect for coffee.</p></blockquote><p class="carou__who"><strong>Joshua Tracy</strong><span>a year ago</span></p></div><div class="carou__slide" role="group" aria-roledescription="slide" aria-label="Review 9 of 12"><svg class="stars" width="75" height="15" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip5015"><rect x="0" y="0" width="120.00" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip5015)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><span class="sr-only">5 out of 5.</span><blockquote><p>I still have dreams of the matcha I got from here. The baristas are great, and the drinks are so good.</p></blockquote><p class="carou__who"><strong>Caylee Weintraub</strong><span>a year ago</span></p></div><div class="carou__slide" role="group" aria-roledescription="slide" aria-label="Review 10 of 12"><svg class="stars" width="75" height="15" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip5015"><rect x="0" y="0" width="120.00" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip5015)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><span class="sr-only">5 out of 5.</span><blockquote><p>Lattes and matcha are among the best in Gainesville. Cute atmosphere and outdoor area as well.</p></blockquote><p class="carou__who"><strong>Dinah Ceilley</strong><span>7 months ago</span></p></div><div class="carou__slide" role="group" aria-roledescription="slide" aria-label="Review 11 of 12"><svg class="stars" width="75" height="15" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip5015"><rect x="0" y="0" width="120.00" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip5015)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><span class="sr-only">5 out of 5.</span><blockquote><p>Atmosphere is so nice, the colour scheme and decor are beautiful. The drinks are amazing, we didn't get any pastries this time but they look good as well. We will be back for sure.</p></blockquote><p class="carou__who"><strong>Caitlyn M</strong><span>a year ago</span></p></div><div class="carou__slide" role="group" aria-roledescription="slide" aria-label="Review 12 of 12"><svg class="stars" width="75" height="15" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip5015"><rect x="0" y="0" width="120.00" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip5015)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><span class="sr-only">5 out of 5.</span><blockquote><p>Amazing coffee in a chill, welcoming shop. The baristas were friendly and hospitable which added to the enjoyable hang. Definitely a gem in the Gainesville coffee scene.</p></blockquote><p class="carou__who"><strong>Travis</strong><span>a year ago</span></p></div></div>
+      </div>
+      <div class="carou__ctl">
+        <button class="carou__btn" type="button" data-prev
+                aria-label="Previous review"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15.4 4.6L8 12l7.4 7.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <div class="carou__dots" role="group" aria-label="Choose a review"
+             data-dots><button class="carou__dot" type="button" data-dot="0" aria-current="true" aria-label="Show review 1 of 12"></button><button class="carou__dot" type="button" data-dot="1" aria-label="Show review 2 of 12"></button><button class="carou__dot" type="button" data-dot="2" aria-label="Show review 3 of 12"></button><button class="carou__dot" type="button" data-dot="3" aria-label="Show review 4 of 12"></button><button class="carou__dot" type="button" data-dot="4" aria-label="Show review 5 of 12"></button><button class="carou__dot" type="button" data-dot="5" aria-label="Show review 6 of 12"></button><button class="carou__dot" type="button" data-dot="6" aria-label="Show review 7 of 12"></button><button class="carou__dot" type="button" data-dot="7" aria-label="Show review 8 of 12"></button><button class="carou__dot" type="button" data-dot="8" aria-label="Show review 9 of 12"></button><button class="carou__dot" type="button" data-dot="9" aria-label="Show review 10 of 12"></button><button class="carou__dot" type="button" data-dot="10" aria-label="Show review 11 of 12"></button><button class="carou__dot" type="button" data-dot="11" aria-label="Show review 12 of 12"></button></div>
+        <button class="carou__play" type="button" data-play aria-pressed="false">
+          <span data-playlabel>Pause</span>
+        </button>
+        <button class="carou__btn" type="button" data-next
+                aria-label="Next review"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.6 4.6L16 12l-7.4 7.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+      </div>
+      <p class="sr-only" aria-live="polite" data-carou-live></p>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="photos-heading">
+  <div class="wrap">
+    <h2 id="photos-heading">The shop</h2>
+    <p class="lede">Everything below is poured at 619 S Main St, Unit 5. More goes up
+      most weeks on Instagram.</p>
+    <div class="gallery"><img src="assets/img/shop/daisy-latte.jpg" alt="A latte in an Afternoon Coffee Co. cup, its foam dusted through a daisy stencil in cocoa." width="1050" height="1400" loading="lazy" decoding="async" style="object-position:50% 40%"><img src="assets/img/shop/storefront.jpg" alt="The shopfront: a dark timber and glass unit under an awning, with planting along the walk." width="1050" height="1400" loading="lazy" decoding="async" style="object-position:50% 50%"><img src="assets/img/shop/flag-day.jpg" alt="A tall black feather flag reading COFFEE with an arrow, planted on the grass outside the white building." width="1050" height="1400" loading="lazy" decoding="async" style="object-position:50% 50%"><img src="assets/img/shop/interior.jpg" alt="Inside: a run of stools along a counter under a white pitched ceiling, with shelves of packaged goods." width="1050" height="1400" loading="lazy" decoding="async" style="object-position:50% 55%"><img src="assets/img/shop/two-drinks.jpg" alt="An iced matcha and a hot cup with a yellow lid, side by side on the counter." width="1050" height="1400" loading="lazy" decoding="async" style="object-position:50% 50%"><img src="assets/img/shop/patio-cups.jpg" alt="Two hands holding a cappuccino and a takeaway cup out on the patio, with the garden behind." width="1050" height="1400" loading="lazy" decoding="async" style="object-position:50% 45%"><img src="assets/img/shop/flowers.jpg" alt="A blue jug of fresh cut flowers on the counter beside the brew bar." width="1050" height="1400" loading="lazy" decoding="async" style="object-position:50% 35%"><img src="assets/img/shop/latte-pastry.jpg" alt="A takeaway latte and a pastry on a napkin at an outdoor table." width="1050" height="1400" loading="lazy" decoding="async" style="object-position:50% 55%"></div>
+    <div class="merch">
+      <img src="assets/img/bags/tee-psycho.jpg" alt="A black Psycho Killer tee held up against a pink wall, printed with a portrait and the Afternoon Coffee name."
+           width="900" height="900" loading="lazy" decoding="async">
+      <div>
+        <p class="bag__kind">Merch</p>
+        <h3>Psycho Killer Tee</h3>
+        <p>Limited edition, garment-dyed cotton, printed in Gainesville.</p>
+        <p class="club__price">$30 &middot; S–XL</p>
+        <a class="btn btn--ghost" href="https://afternoonroasting.com/products/psycho-killer-afternoon-coffee">
+          <span>See the tee</span></a>
+      </div>
+    </div>
+    <p class="centred">
+      <a class="btn btn--ig" href="https://www.instagram.com/afternoon__coffee/">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.22 1 .48 1.4.9.43.43.7.83.91 1.4.17.42.37 1.04.42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.05 1.2-.25 1.8-.42 2.2a3.8 3.8 0 01-.9 1.4c-.44.43-.84.7-1.41.91-.42.17-1.04.37-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.05-1.8-.25-2.2-.42a3.8 3.8 0 01-1.4-.9 3.8 3.8 0 01-.91-1.41c-.17-.42-.37-1.04-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.2.25-1.8.42-2.2.22-.6.48-1 .9-1.4.43-.43.83-.7 1.4-.91.42-.17 1.04-.37 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.8.07-1.1.05-1.7.24-2.1.4-.5.2-.9.44-1.3.84-.4.4-.64.8-.84 1.3-.16.4-.35 1-.4 2.1-.06 1.3-.07 1.7-.07 4.8s0 3.5.07 4.8c.05 1.1.24 1.7.4 2.1.2.5.44.9.84 1.3.4.4.8.64 1.3.84.4.16 1 .35 2.1.4 1.3.06 1.7.07 4.8.07s3.5 0 4.8-.07c1.1-.05 1.7-.24 2.1-.4.5-.2.9-.44 1.3-.84.4-.4.64-.8.84-1.3.16-.4.35-1 .4-2.1.06-1.3.07-1.7.07-4.8s0-3.5-.07-4.8c-.05-1.1-.24-1.7-.4-2.1-.2-.5-.44-.9-.84-1.3-.4-.4-.8-.64-1.3-.84-.4-.16-1-.35-2.1-.4C15.5 4 15.1 4 12 4z"></path><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.25A3.25 3.25 0 1112 8.75a3.25 3.25 0 010 6.5z"></path><circle cx="17.25" cy="6.75" r="1.2"></circle></svg><span>Follow @afternoon__coffee</span></a>
+    </p>
+  </div>
+</section>
+
+<section class="band band--surface" id="faq" aria-labelledby="faq-heading">
+  <div class="wrap">
+    <h2 id="faq-heading">Questions</h2>
+    <div class="faq"><details class="faq__item"><summary>Where does the coffee come from?</summary><div class="faq__a"><p>Green coffee is sourced through three importers &mdash; Genuine Origin, Red Fox Coffee Merchants and Royal Coffee NYC &mdash; and roasted here in Gainesville.</p></div></details><details class="faq__item"><summary>I ordered coffee. When will it arrive?</summary><div class="faq__a"><p>Roasting happens on Mondays and orders ship on Tuesdays, by USPS Priority 2-Day Express or UPS Ground Advantage. Tracking follows by email.</p></div></details><details class="faq__item"><summary>Can I pick my order up instead?</summary><div class="faq__a"><p>Yes &mdash; at the roastery on Tuesdays between 9 and 5. If you cannot make that window, get in touch and it will be worked out.</p></div></details><details class="faq__item"><summary>Do you deliver locally?</summary><div class="faq__a"><p>Free local delivery on Wednesdays, anywhere within four miles of the roastery.</p></div></details><details class="faq__item"><summary>I want to serve your coffee at my restaurant, cafe or bar.</summary><div class="faq__a"><p>Wholesale is open. Email <a href="mailto:afternoonroasting@gmail.com">afternoonroasting@gmail.com</a> and the conversation starts there.</p></div></details></div>
+  </div>
+</section>
+
+<section class="band" id="visit" aria-labelledby="visit-heading">
+  <div class="wrap">
+    <h2 id="visit-heading">Visit the roastery</h2>
+    <div class="cols">
+      <div>
+        <ul class="facts">
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"></path></svg><span><span class="lbl">Address</span>
+            <span class="val">619 S Main St, Unit 5<br>Gainesville, FL 32601<br>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=619+S+Main+St+Unit+5,+Gainesville,+FL+32601">Get directions</a> &mdash; a short walk from
+            Depot Park.</span></span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm.5-13H11v6l5.2 3.1.8-1.3-4.5-2.7z"></path></svg><span><span class="lbl">Cafe hours</span>
+            <span class="val">Open daily, 7:30 AM – 3 PM</span></span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 7V6a5 5 0 0110 0v1h3.1a1 1 0 011 1.1l-1.3 12a2 2 0 01-2 1.9H6.2a2 2 0 01-2-1.8l-1.3-12A1 1 0 013.9 7H7zm2 0h6V6a3 3 0 00-6 0v1z"></path></svg><span><span class="lbl">Order pickup</span>
+            <span class="val">Tuesdays, 9&nbsp;AM to 5&nbsp;PM at the
+            roastery. Free local delivery on Wednesdays within four
+            miles.</span></span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7.2L4.6 6.4 4 6v.6l8 5.2 8-5.2V6l-.6.4z"></path><path d="M4 8.3V18h16V8.3l-8 5.2z"></path></svg><span><span class="lbl">Email</span>
+            <span class="val"><a href="mailto:afternoonroasting@gmail.com">afternoonroasting@gmail.com</a>
+            &mdash; wholesale enquiries welcome.</span></span></li>
+        </ul>
+      </div>
+      <div>
+        <ul class="facts">
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="4.2" r="2.2"></circle><path d="M19.1 8.1a1.1 1.1 0 00-1.32-.83L14.5 8a9.4 9.4 0 01-5 0L6.22 7.27A1.1 1.1 0 005.8 9.43l3.1.69v3.3l-1.9 6.2a1.15 1.15 0 002.2.68l1.86-5.7h1.88l1.86 5.7a1.15 1.15 0 002.2-.68l-1.9-6.2v-3.3l3.1-.69a1.1 1.1 0 00.9-1.33z"></path></svg><span><span class="lbl">Getting in</span>
+            <span class="val">Dine in, takeaway and delivery. There is a garden
+            and outdoor seating alongside the small indoor
+            counter.</span></span></li>
+        </ul>
+        <div class="notice">
+          <p><strong>Wholesale.</strong> Serving Afternoon at a restaurant, cafe
+            or bar starts with an email to
+            <a href="mailto:afternoonroasting@gmail.com">afternoonroasting@gmail.com</a>.</p>
+        </div>
+        <div class="notice">
+          <p><strong>Something not working for you?</strong> We want everyone to
+            be able to use this site and the shop. Email
+            <a href="mailto:afternoonroasting@gmail.com">afternoonroasting@gmail.com</a> with the page you
+            were on and we will fix it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__in">
+      <div>
+        <span class="mark mark--ftr"><img src="assets/img/daisy-disc.png" alt="" width="96" height="96" decoding="async"><span class="mark__txt"><b>afternoon</b><i>roasting</i></span></span>
+        <p>A microscopic coffee roaster and coffeeshop in Gainesville,
+          Florida.</p>
+        <div class="social">
+          <a href="https://www.instagram.com/afternoon__coffee/"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.22 1 .48 1.4.9.43.43.7.83.91 1.4.17.42.37 1.04.42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.05 1.2-.25 1.8-.42 2.2a3.8 3.8 0 01-.9 1.4c-.44.43-.84.7-1.41.91-.42.17-1.04.37-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.05-1.8-.25-2.2-.42a3.8 3.8 0 01-1.4-.9 3.8 3.8 0 01-.91-1.41c-.17-.42-.37-1.04-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.2.25-1.8.42-2.2.22-.6.48-1 .9-1.4.43-.43.83-.7 1.4-.91.42-.17 1.04-.37 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.8.07-1.1.05-1.7.24-2.1.4-.5.2-.9.44-1.3.84-.4.4-.64.8-.84 1.3-.16.4-.35 1-.4 2.1-.06 1.3-.07 1.7-.07 4.8s0 3.5.07 4.8c.05 1.1.24 1.7.4 2.1.2.5.44.9.84 1.3.4.4.8.64 1.3.84.4.16 1 .35 2.1.4 1.3.06 1.7.07 4.8.07s3.5 0 4.8-.07c1.1-.05 1.7-.24 2.1-.4.5-.2.9-.44 1.3-.84.4-.4.64-.8.84-1.3.16-.4.35-1 .4-2.1.06-1.3.07-1.7.07-4.8s0-3.5-.07-4.8c-.05-1.1-.24-1.7-.4-2.1-.2-.5-.44-.9-.84-1.3-.4-.4-.8-.64-1.3-.84-.4-.16-1-.35-2.1-.4C15.5 4 15.1 4 12 4z"></path><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.25A3.25 3.25 0 1112 8.75a3.25 3.25 0 010 6.5z"></path><circle cx="17.25" cy="6.75" r="1.2"></circle></svg>
+            <span class="sr-only">Afternoon on Instagram</span></a>
+          <a href="mailto:afternoonroasting@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7.2L4.6 6.4 4 6v.6l8 5.2 8-5.2V6l-.6.4z"></path><path d="M4 8.3V18h16V8.3l-8 5.2z"></path></svg>
+            <span class="sr-only">Email Afternoon Roasting</span></a>
+        </div>
+      </div>
+      <div>
+        <h2>Find us</h2>
+        <ul>
+          <li>619 S Main St, Unit 5<br>Gainesville, FL 32601</li>
+          <li><a href="https://www.google.com/maps/dir/?api=1&destination=619+S+Main+St+Unit+5,+Gainesville,+FL+32601">Get directions</a></li>
+          <li><a href="mailto:afternoonroasting@gmail.com">afternoonroasting@gmail.com</a></li>
+          <li><a href="https://www.google.com/maps/place/?q=place_id:ChIJIfI8S2uj6IgRZp7PWG9bGO8">Reviews on Google</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Shop</h2>
+        <ul>
+          <li><a href="https://afternoonroasting.com/collections/all">All coffee</a></li>
+          <li><a href="https://afternoonroasting.com/products/coffee-subscription">Coffee Club</a></li>
+          <li><a href="#faq">Shipping &amp; pickup</a></li>
+          <li><a href="#cafe">Cafe menu</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="ftr__legal">
+      <span>&copy; 2026 Afternoon Roasting</span>
+      <span>Cafe open daily 7:30 AM &ndash; 3 PM</span>
+      <span>Roasted in Gainesville, Florida</span>
+    </p>
+  </div>
+</footer>
+
+<aside class="a11y-ui a11y-root" aria-label="Accessibility adjustments">
+<button class="a11y-fab" id="a11yFab" type="button" aria-expanded="false"
+        aria-controls="a11yPanel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2zM3.4 7.9c2.7.9 5.6 1.4 8.6 1.4s5.9-.5 8.6-1.4a1.2 1.2 0 1 1 .7 2.3c-2 .6-4 1.1-6.1 1.3l.6 3.1 2.3 5.7a1.2 1.2 0 1 1-2.2.9L13.4 16h-2.8l-2.5 6.2a1.2 1.2 0 1 1-2.2-.9l2.3-5.7.6-3.1c-2.1-.2-4.1-.7-6.1-1.3a1.2 1.2 0 1 1 .7-2.3z"/></svg>
+  <span class="sr-only">Accessibility adjustments</span>
+</button>
+<div class="a11y" id="a11yPanel" role="dialog" aria-labelledby="a11yTitle" hidden>
+  <div class="a11y__head">
+    <button class="a11y__x" type="button" data-a11y-close>
+      <span aria-hidden="true">&times;</span>
+      <span class="sr-only">Close accessibility adjustments</span>
+    </button>
+    <span class="a11y__mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2zM3.4 7.9c2.7.9 5.6 1.4 8.6 1.4s5.9-.5 8.6-1.4a1.2 1.2 0 1 1 .7 2.3c-2 .6-4 1.1-6.1 1.3l.6 3.1 2.3 5.7a1.2 1.2 0 1 1-2.2.9L13.4 16h-2.8l-2.5 6.2a1.2 1.2 0 1 1-2.2-.9l2.3-5.7.6-3.1c-2.1-.2-4.1-.7-6.1-1.3a1.2 1.2 0 1 1 .7-2.3z"/></svg></span>
+    <h2 id="a11yTitle">Accessibility Adjustments</h2>
+    <p class="a11y__sub">Afternoon &middot;
+      <button class="a11y__hide" type="button" data-a11y-close>Hide Toolbar</button></p>
+  </div>
+  <div class="a11y__body">
+    <section class="a11y__grp" aria-labelledby="a11yG1">
+      <h3 id="a11yG1">Content Modules</h3>
+      <div class="a11y__grid"><div class="a11y__step"><span id="a11y-fs-l">Font Size</span><div class="a11y__row"><button class="a11y__sbtn" type="button" data-a11y-s="fs" data-dir="1" aria-describedby="a11y-fs-l" aria-label="Increase font size"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5.5v13M5.5 12h13"/></svg></button><output class="a11y__out" id="a11y-fs-v" for="a11y-fs-l">Default</output><button class="a11y__sbtn" type="button" data-a11y-s="fs" data-dir="-1" aria-describedby="a11y-fs-l" aria-label="Decrease font size"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.5 12h13"/></svg></button></div></div><button class="a11y__tile" type="button" data-a11y-t="readable" aria-pressed="false"><span class="a11y__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M9 16l3-8 3 8M10 13.6h4"/></svg></span><span class="a11y__lab" data-lab="Readable Font">Readable Font</span></button><div class="a11y__step"><span id="a11y-lh-l">Line Height</span><div class="a11y__row"><button class="a11y__sbtn" type="button" data-a11y-s="lh" data-dir="1" aria-describedby="a11y-lh-l" aria-label="Increase line height"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5.5v13M5.5 12h13"/></svg></button><output class="a11y__out" id="a11y-lh-v" for="a11y-lh-l">Default</output><button class="a11y__sbtn" type="button" data-a11y-s="lh" data-dir="-1" aria-describedby="a11y-lh-l" aria-label="Decrease line height"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.5 12h13"/></svg></button></div></div><button class="a11y__tile" type="button" data-a11y-t="cursor" aria-pressed="false"><span class="a11y__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3.5l12 8.4-5.6 1 2.6 5.6-2.6 1.1-2.5-5.6-3.9 3.7z"/></svg></span><span class="a11y__lab" data-lab="Big Cursor">Big Cursor</span></button><button class="a11y__tile" type="button" data-a11y-t="ls" aria-pressed="false"><span class="a11y__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 5v7M11 5v7M15 5v7M3 18h18M3 18l2.5-2.5M3 18l2.5 2.5M21 18l-2.5-2.5M21 18l-2.5 2.5"/></svg></span><span class="a11y__lab" data-lab="Letter Spacing">Letter Spacing</span></button><button class="a11y__tile" type="button" data-a11y-t="align" aria-pressed="false"><span class="a11y__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M7 10.7h10M4 15.3h16M7 20h10"/></svg></span><span class="a11y__lab" data-lab="Align Text">Align Text</span></button><button class="a11y__tile" type="button" data-a11y-t="weight" aria-pressed="false"><span class="a11y__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M9.5 8h3.1a2.1 2.1 0 0 1 0 4.2H9.5zm0 4.2h3.6a2.1 2.1 0 0 1 0 4.2H9.5z"/></svg></span><span class="a11y__lab" data-lab="Font Weight">Font Weight</span></button></div>
+    </section>
+    <section class="a11y__grp" aria-labelledby="a11yG2">
+      <h3 id="a11yG2">Color Modules</h3>
+      <div class="a11y__grid"><button class="a11y__tile" type="button" data-a11y-t="c-light" aria-pressed="false"><span class="a11y__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.4v2.1M12 19.5v2.1M4.2 4.2l1.5 1.5M18.3 18.3l1.5 1.5M2.4 12h2.1M19.5 12h2.1M4.2 19.8l1.5-1.5M18.3 5.7l1.5-1.5"/></svg></span><span class="a11y__lab" data-lab="Light Contrast">Light Contrast</span></button><button class="a11y__tile" type="button" data-a11y-t="c-high" aria-pressed="false"><span class="a11y__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 3.1a8.9 8.9 0 0 1 0 17.8z" fill="currentColor" stroke="none"/></svg></span><span class="a11y__lab" data-lab="High Contrast">High Contrast</span></button><button class="a11y__tile" type="button" data-a11y-t="c-mono" aria-pressed="false"><span class="a11y__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M4.3 8.6h15.4M3.2 12.4h17.6M4.3 16.2h15.4"/></svg></span><span class="a11y__lab" data-lab="Monochrome">Monochrome</span></button></div>
+    </section>
+    <section class="a11y__grp" aria-labelledby="a11yG3">
+      <h3 id="a11yG3">Orientation Modules</h3>
+      <div class="a11y__grid"><button class="a11y__tile" type="button" data-a11y-t="line" aria-pressed="false"><span class="a11y__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="6.5" width="19" height="11" rx="3"/><path d="M7.4 12h.01M12 12h.01M16.6 12h.01"/></svg></span><span class="a11y__lab" data-lab="Reading Line">Reading Line</span></button><button class="a11y__tile" type="button" data-a11y-t="mask" aria-pressed="false"><span class="a11y__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 8.2c3-2.6 6-2.6 9 0s6 2.6 9 0M3 15.8c3 2.6 6 2.6 9 0s6-2.6 9 0"/></svg></span><span class="a11y__lab" data-lab="Reading Mask">Reading Mask</span></button><button class="a11y__tile" type="button" data-a11y-t="noimg" aria-pressed="false"><span class="a11y__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.8 17.2L9 12l3.4 3.4M14.4 13.6L16.8 11l3.4 3.4"/><path d="M14.4 6.2l3.6 3.6M18 6.2l-3.6 3.6"/></svg></span><span class="a11y__lab" data-lab="Hide Images">Hide Images</span></button><button class="a11y__tile" type="button" data-a11y-t="spot" aria-pressed="false"><span class="a11y__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="4.5" width="15" height="15" rx="2"/><circle cx="4.5" cy="4.5" r="1.9" fill="currentColor" stroke="none"/><circle cx="19.5" cy="4.5" r="1.9" fill="currentColor" stroke="none"/><circle cx="4.5" cy="19.5" r="1.9" fill="currentColor" stroke="none"/><circle cx="19.5" cy="19.5" r="1.9" fill="currentColor" stroke="none"/></svg></span><span class="a11y__lab" data-lab="Highlight Content">Highlight Content</span></button><button class="a11y__tile" type="button" data-a11y-t="motion" aria-pressed="false"><span class="a11y__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M5.6 18.4L18.4 5.6"/></svg></span><span class="a11y__lab" data-lab="Stop Animations">Stop Animations</span></button><button class="a11y__tile" type="button" data-a11y-t="links" aria-pressed="false"><span class="a11y__ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 13.8a4 4 0 0 0 5.7 0l2.8-2.9a4 4 0 0 0-5.7-5.6l-1.3 1.3"/><path d="M14 10.2a4 4 0 0 0-5.7 0l-2.8 2.9a4 4 0 0 0 5.7 5.6l1.3-1.3"/></svg></span><span class="a11y__lab" data-lab="Highlight Links">Highlight Links</span></button></div>
+    </section>
+    <p class="a11y__note">Your choices are stored on this device only.</p>
+    <button class="a11y__reset" type="button" data-a11y-reset>Reset Settings</button>
+  </div>
+</div>
+</aside>
+<script>(function () {
+  "use strict";
+  var root = document.documentElement;
+
+  /* ---- open / closed, in the cafe's own time zone -------------------- */
+  function localHour() {
+    try {
+      var parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: "America/New_York", hour: "numeric", minute: "numeric",
+        hour12: false
+      }).formatToParts(new Date());
+      var get = function (t) {
+        for (var i = 0; i < parts.length; i++) {
+          if (parts[i].type === t) { return parseInt(parts[i].value, 10); }
+        }
+        return 0;
+      };
+      return get("hour") + get("minute") / 60;
+    } catch (e) { return null; }
+  }
+  var pill = document.getElementById("status");
+  if (pill) {
+    var h = localHour();
+    if (h !== null) {
+      /* One window a day, and it does not cross midnight: open when the hour
+         is inside it. A window that wrapped would need h >= open || h < close. */
+      var open = h >= 7.5 && h < 15.0;
+      pill.setAttribute("data-open", open ? "yes" : "no");
+      pill.querySelector(".status__text").textContent =
+        open ? "Open now \u00b7 until 3 PM" : "Closed \u00b7 opens 7:30 AM";
+    }
+  }
+
+  /* ---- review carousel ------------------------------------------------ */
+  document.querySelectorAll("[data-carousel]").forEach(function (root) {
+    var vp = root.querySelector("[data-vp]"),
+        track = root.querySelector("[data-track]"),
+        prev = root.querySelector("[data-prev]"),
+        next = root.querySelector("[data-next]"),
+        dotbox = root.querySelector("[data-dots]"),
+        play = root.querySelector("[data-play]"),
+        playLabel = root.querySelector("[data-playlabel]"),
+        live = root.querySelector("[data-carou-live]"),
+        reduce = window.matchMedia
+          && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+        timer = null, paused = false, held = false;
+
+    function slides() { return Array.prototype.slice.call(track.children); }
+    function perView() {
+      var sl = slides();
+      if (!sl.length) { return 1; }
+      return Math.max(1, Math.round(vp.clientWidth / sl[0].getBoundingClientRect().width));
+    }
+    function index() {
+      var sl = slides();
+      if (!sl.length) { return 0; }
+      var w = sl[0].getBoundingClientRect().width + 16;
+      return Math.max(0, Math.min(sl.length - 1, Math.round(vp.scrollLeft / w)));
+    }
+    function go(i, smooth) {
+      var sl = slides();
+      if (!sl.length) { return; }
+      i = Math.max(0, Math.min(sl.length - 1, i));
+      var left = sl[i].offsetLeft - track.offsetLeft;
+      if (smooth && !reduce && vp.scrollTo) { vp.scrollTo({left: left, behavior: "smooth"}); }
+      else { vp.scrollLeft = left; }
+    }
+    function sync() {
+      var i = index(), sl = slides(), last = Math.max(0, sl.length - perView());
+      Array.prototype.forEach.call(dotbox.children, function (d, n) {
+        if (n === i) { d.setAttribute("aria-current", "true"); }
+        else { d.removeAttribute("aria-current"); }
+      });
+      prev.disabled = i <= 0;
+      next.disabled = i >= last;
+      if (live) { live.textContent = "Review " + (i + 1) + " of " + sl.length; }
+    }
+
+    prev.addEventListener("click", function () { go(index() - 1, true); });
+    next.addEventListener("click", function () { go(index() + 1, true); });
+    dotbox.addEventListener("click", function (e) {
+      var d = e.target.closest ? e.target.closest("[data-dot]") : null;
+      if (d) { go(parseInt(d.getAttribute("data-dot"), 10), true); }
+    });
+    vp.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); go(index() + 1, true); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(index() - 1, true); }
+    });
+    var raf = null;
+    vp.addEventListener("scroll", function () {
+      if (raf) { return; }
+      raf = requestAnimationFrame(function () { raf = null; sync(); });
+    }, {passive: true});
+    window.addEventListener("resize", sync);
+
+    /* Auto-advance, with a Pause control so it meets WCAG 2.2.2, and held
+       while the pointer or keyboard focus is inside the carousel. */
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function start() {
+      stop();
+      if (reduce || paused || held || document.hidden || slides().length < 2) { return; }
+      timer = setInterval(function () {
+        var sl = slides(), last = Math.max(0, sl.length - perView());
+        go(index() >= last ? 0 : index() + 1, true);
+      }, 6000);
+    }
+    ["mouseenter", "focusin", "touchstart"].forEach(function (ev) {
+      root.addEventListener(ev, function () { held = true; stop(); }, {passive: true});
+    });
+    ["mouseleave", "focusout"].forEach(function (ev) {
+      root.addEventListener(ev, function () { held = false; start(); });
+    });
+    document.addEventListener("visibilitychange", start);
+    if (play) {
+      if (reduce) { play.hidden = true; }
+      play.addEventListener("click", function () {
+        paused = !paused;
+        play.setAttribute("aria-pressed", paused ? "true" : "false");
+        playLabel.textContent = paused ? "Play" : "Pause";
+        if (paused) { stop(); } else { start(); }
+      });
+    }
+    sync();
+    start();
+  });
+
+  /* ---- accessibility toolbar ------------------------------------------ */
+  (function () {
+    var H = document.documentElement, KEY = "brewandroot_a11y_v1";
+    var fab = document.getElementById("a11yFab"),
+        panel = document.getElementById("a11yPanel");
+    if (!fab || !panel) { return; }
+    var shell = fab.parentNode;
+
+    /* Index 1 is the untouched page in both scales, so "Default" is always one
+       press away and nobody can strand themselves at an unreadable size. */
+    var FS = [{s: "0.88", n: "Smaller"}, {s: "1", n: "Default"}, {s: "1.15", n: "Large"},
+              {s: "1.3", n: "Larger"}, {s: "1.5", n: "X-Large"}, {s: "1.75", n: "XX-Large"}];
+    var LH = [{v: "1.25", n: "Tight"}, {v: "", n: "Default"}, {v: "1.9", n: "Relaxed"},
+              {v: "2.3", n: "Loose"}, {v: "2.8", n: "Very Loose"}];
+    var LS = [{n: "Default"}, {v: ".06em", w: ".16em", n: "Wide"},
+              {v: ".12em", w: ".26em", n: "Wider"}, {v: ".2em", w: ".4em", n: "Widest"}];
+    var AL = [{n: "Default"}, {v: "left", n: "Left"}, {v: "center", n: "Center"},
+              {v: "right", n: "Right"}];
+    var DEF = {fs: 1, lh: 1, ls: 0, align: 0, weight: 0, readable: 0, cursor: 0,
+               color: "", line: 0, mask: 0, noimg: 0, spot: 0, motion: 0, links: 0};
+    var S = {};
+
+    function load() {
+      var k;
+      for (k in DEF) { S[k] = DEF[k]; }
+      try {
+        var raw = window.localStorage.getItem(KEY);
+        if (!raw) { return; }
+        var o = JSON.parse(raw);
+        for (k in DEF) { if (o && o[k] !== undefined) { S[k] = o[k]; } }
+      } catch (e) { /* private window or blocked storage: keep the defaults */ }
+    }
+    function save() {
+      try { window.localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { /* ignore */ }
+    }
+    function flag(attr, on) {
+      if (on) { H.setAttribute(attr, ""); } else { H.removeAttribute(attr); }
+    }
+
+    /* Reading aids are drawn inside this landmark, never loose on <body>. */
+    function overlay(cls) {
+      var d = document.createElement("div");
+      d.className = cls + " a11y-ui";
+      d.setAttribute("aria-hidden", "true");
+      shell.appendChild(d);
+      return d;
+    }
+    var rule = overlay("a11y-rule"), mTop = overlay("a11y-mask"), mBot = overlay("a11y-mask");
+    var spotted = null;
+
+    function clearSpot() {
+      if (spotted) { spotted.classList.remove("a11y-spot"); spotted = null; }
+    }
+    document.addEventListener("mousemove", function (e) {
+      var y = e.clientY;
+      if (S.line) { rule.style.top = (y - 2) + "px"; }
+      if (S.mask) {
+        mTop.style.top = "0px";
+        mTop.style.height = Math.max(0, y - 62) + "px";
+        mBot.style.top = (y + 62) + "px";
+        mBot.style.bottom = "0px";
+      }
+      if (S.spot) {
+        var el = document.elementFromPoint(e.clientX, y);
+        el = el && el.closest
+          ? el.closest("p,h1,h2,h3,h4,h5,h6,li,figcaption,blockquote") : null;
+        if (el && el.closest(".a11y-ui")) { el = null; }
+        if (el !== spotted) { clearSpot(); spotted = el; if (el) { el.classList.add("a11y-spot"); } }
+      }
+    }, {passive: true});
+
+    function apply() {
+      H.style.setProperty("--a11y-fs", FS[S.fs].s);
+
+      var lh = LH[S.lh];
+      flag("data-a11y-lh", !!lh.v);
+      if (lh.v) { H.style.setProperty("--a11y-lh", lh.v); }
+
+      var ls = LS[S.ls];
+      flag("data-a11y-ls", !!ls.v);
+      if (ls.v) {
+        H.style.setProperty("--a11y-ls", ls.v);
+        H.style.setProperty("--a11y-ws", ls.w);
+      }
+
+      var al = AL[S.align];
+      flag("data-a11y-align", !!al.v);
+      if (al.v) { H.style.setProperty("--a11y-align", al.v); }
+
+      flag("data-a11y-weight", S.weight);
+      flag("data-a11y-readable", S.readable);
+      flag("data-a11y-cursor", S.cursor);
+      flag("data-a11y-noimg", S.noimg);
+      flag("data-a11y-links", S.links);
+      flag("data-a11y-stopmotion", S.motion);
+
+      if (S.color) { H.setAttribute("data-a11y-color", S.color); }
+      else { H.removeAttribute("data-a11y-color"); }
+
+      rule.style.display = S.line ? "block" : "none";
+      mTop.style.display = S.mask ? "block" : "none";
+      mBot.style.display = S.mask ? "block" : "none";
+      if (!S.spot) { clearSpot(); }
+      sync();
+    }
+
+    function tile(key) { return panel.querySelector('[data-a11y-t="' + key + '"]'); }
+    function press(key, on) {
+      var b = tile(key);
+      if (b) { b.setAttribute("aria-pressed", on ? "true" : "false"); }
+    }
+    function setLab(key, base, extra) {
+      var b = tile(key);
+      if (b) { b.querySelector(".a11y__lab").textContent = extra ? base + ": " + extra : base; }
+    }
+
+    function sync() {
+      document.getElementById("a11y-fs-v").value = FS[S.fs].n;
+      document.getElementById("a11y-lh-v").value = LH[S.lh].n;
+      press("readable", S.readable); press("cursor", S.cursor);
+      press("weight", S.weight);     press("noimg", S.noimg);
+      press("line", S.line);         press("mask", S.mask);
+      press("spot", S.spot);         press("motion", S.motion);
+      press("links", S.links);
+      press("c-light", S.color === "light");
+      press("c-high", S.color === "high");
+      press("c-mono", S.color === "mono");
+      press("ls", S.ls > 0);
+      setLab("ls", "Letter Spacing", S.ls > 0 ? LS[S.ls].n : "");
+      press("align", S.align > 0);
+      setLab("align", "Align Text", S.align > 0 ? AL[S.align].n : "");
+    }
+
+    panel.addEventListener("click", function (e) {
+      var b = e.target.closest ? e.target.closest("button") : null;
+      if (!b || !panel.contains(b)) { return; }
+
+      if (b.hasAttribute("data-a11y-close")) { closePanel(); return; }
+
+      if (b.hasAttribute("data-a11y-reset")) {
+        var k;
+        for (k in DEF) { S[k] = DEF[k]; }
+        clearSpot(); apply(); save();
+        return;
+      }
+
+      var st = b.getAttribute("data-a11y-s");
+      if (st) {
+        var dir = parseInt(b.getAttribute("data-dir"), 10);
+        var max = (st === "fs" ? FS : LH).length - 1;
+        S[st] = Math.min(max, Math.max(0, S[st] + dir));
+        apply(); save();
+        return;
+      }
+
+      var t = b.getAttribute("data-a11y-t");
+      if (!t) { return; }
+      if (t === "ls") { S.ls = (S.ls + 1) % LS.length; }
+      else if (t === "align") { S.align = (S.align + 1) % AL.length; }
+      else if (t.indexOf("c-") === 0) {
+        var mode = t.slice(2);
+        S.color = (S.color === mode) ? "" : mode;   /* the colour modes are exclusive */
+      } else { S[t] = S[t] ? 0 : 1; }
+      apply(); save();
+    });
+
+    function openPanel() {
+      panel.hidden = false;
+      fab.setAttribute("aria-expanded", "true");
+      fab.style.display = "none";          /* the panel sits over the launcher */
+      /* preventScroll matters: without it the browser scrolls .a11y__body to
+         "reveal" a header button and the panel opens halfway down the list. */
+      panel.querySelector(".a11y__x").focus({preventScroll: true});
+      panel.querySelector(".a11y__body").scrollTop = 0;
+    }
+    function closePanel() {
+      panel.hidden = true;
+      fab.setAttribute("aria-expanded", "false");
+      fab.style.display = "";
+      fab.focus();
+    }
+    fab.addEventListener("click", openPanel);
+    document.addEventListener("keydown", function (e) {
+      if ((e.key === "Escape" || e.key === "Esc") && !panel.hidden) { closePanel(); }
+    });
+
+    load();
+    apply();
+  }());
+}());
+</script>
+</body>
+</html>

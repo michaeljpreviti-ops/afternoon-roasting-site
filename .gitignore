@@ -1,0 +1,16 @@
+# secrets — never commit
+.vercel_token
+.env
+.env.*
+
+# tooling
+.vercel/
+__pycache__/
+*.pyc
+
+# Build variant for the Claude artifact host only: a body fragment with no
+# <head>, so it must never be served as a page. `python3 src/gen.py` makes it.
+artifact.html
+
+# macOS
+.DS_Store
