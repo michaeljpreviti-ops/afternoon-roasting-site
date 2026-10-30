@@ -51,8 +51,13 @@ Target is **WCAG 2.1 AA**.
   at 4.5:1, control borders at 3:1 — checked in both themes and again against the hero's tinted
   plate. `--line-strong` is for control borders (WCAG 1.4.11); `--line` is for decorative
   dividers, which have no minimum. All 51 pairs pass as of this commit.
-- Still to do: a pass with **axe-core** and one with the **WAVE** Chrome extension against the
-  deployed URL. Claude cannot click extension toolbar icons, so WAVE is manual.
+- Audited with axe-core 4.10.2 (`wcag2a, wcag2aa, wcag21a, wcag21aa, best-practice`) against the
+  deployed URL: **0 violations**, both with the toolbar closed and with it open, every option
+  switched on, high contrast, and at largest text and loosest line height. The nine `incomplete`
+  `color-contrast` entries are all in the hero, where axe cannot flatten the `::after` glow plate
+  — those are the exact pairs `GLOW_PAIRS` in `gen.py` computes by hand and the build enforces.
+- Still to do: a pass with the **WAVE** Chrome extension against the deployed URL. Claude cannot
+  click extension toolbar icons, so this one is manual.
 
 The bottom-left toolbar is the same component as the Dave Barber's and Brew & Root sites, in
 Afternoon's blue: font size and line height steppers, readable font, letter spacing, text align,
@@ -120,5 +125,10 @@ Worth asking before this goes anywhere near the live domain:
 
 ## Deploy
 
+Live at <https://afternoon-roasting.vercel.app>, from
+`michaeljpreviti-ops/afternoon-roasting-site` on the Craft Studio team. Pushing to `main`
+redeploys.
+
 Static, no build step on the host. `vercel.json` sets `cleanUrls`, a one-year immutable cache on
-`/assets/*`, and `nosniff` / `strict-origin-when-cross-origin` headers.
+`/assets/*`, and `nosniff` / `strict-origin-when-cross-origin` headers. `.vercelignore` keeps
+`assets/img/src/`, `src/` and this README off the CDN; they stay in git.
