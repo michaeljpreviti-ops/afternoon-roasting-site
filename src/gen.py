@@ -45,7 +45,7 @@ BUSINESS = {
     "google_reviews": "https://www.google.com/maps/place/?q=place_id:ChIJIfI8S2uj6IgRZp7PWG9bGO8",
     "maps": "https://www.google.com/maps/dir/?api=1&destination=619+S+Main+St+Unit+5,+Gainesville,+FL+32601",
     "google_rating": 4.6,
-    "google_count": 80,
+    "google_count": 81,
     "price_band": "$1–10",
 }
 
@@ -561,10 +561,6 @@ def hero():
     <div>
       <p class="eyebrow">Gainesville, Florida &middot; since the shop on South Main</p>
       <h1 id="hero-heading">Roasted Monday.<br><em>Shipped Tuesday.</em></h1>
-      <p class="hero__lede">A microscopic roaster and coffeeshop giving it our
-        all to source, roast and serve the finest coffees. Seven bags on the
-        shelf, an espresso bar at 619&nbsp;S&nbsp;Main, and coffee that reaches
-        you days old rather than months.</p>
       <div class="hero__meta">
         {star_badge('herostars', 17,
                     f'<span class="herostars__n">{b["google_count"]} Google reviews</span>')}

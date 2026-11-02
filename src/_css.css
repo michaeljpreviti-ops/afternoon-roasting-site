@@ -116,19 +116,18 @@ body::before{content:"";position:fixed;inset:0 0 auto;
   font-weight:700;color:var(--muted);margin-bottom:1rem}
 .hero h1{font-size:var(--step-4);letter-spacing:-.02em;font-weight:600}
 .hero h1 em{font-style:italic;color:var(--accent)}
-.hero__lede{margin-top:1.1rem;font-size:var(--step-1);color:var(--muted);
-  max-width:34ch}
-.hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.8rem}
+.hero__cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+.hero__cta .btn{min-height:52px;padding:.85rem 1.7rem;font-size:var(--step-0)}
 .hero__art{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;min-width:0}
 .hero__art img{border-radius:var(--radius);aspect-ratio:1;object-fit:cover;
   width:100%;border:1px solid var(--line)}
 .hero__art img:first-child{grid-column:span 2;aspect-ratio:4/3}
 
 /* live open/closed pill */
-.status{display:inline-flex;align-items:center;gap:.55rem;margin-top:1.4rem;
-  padding:.45rem .95rem;border-radius:999px;background:var(--raised);
-  border:1px solid var(--line-strong);font-size:var(--step--1);font-weight:600}
-.status__dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--muted);flex:none}
+.status{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.4rem;
+  min-height:52px;padding:.7rem 1.3rem;border-radius:999px;background:var(--raised);
+  border:1px solid var(--line-strong);font-size:var(--step-0);font-weight:600}
+.status__dot{width:.7rem;height:.7rem;border-radius:50%;background:var(--muted);flex:none}
 .status[data-open="yes"] .status__dot{background:var(--accent);
   animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
@@ -328,11 +327,19 @@ body::before{content:"";position:fixed;inset:0 0 auto;
 .navstars__n{color:var(--muted);font-weight:500}
 .navstars:hover .navstars__n{color:inherit}
 @media (max-width:40rem){.navstars__n{display:none}}
-.herostars{padding:.5rem 1rem;font-size:var(--step-0);min-height:44px}
-.herostars__n{color:var(--muted);font-weight:500;font-size:var(--step--1)}
+.herostars{padding:.7rem 1.3rem;font-size:var(--step-1);min-height:52px;gap:.55rem}
+.herostars__n{color:var(--muted);font-weight:500;font-size:var(--step-0)}
 .herostars:hover .herostars__n{color:inherit}
-.hero__meta{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;margin-top:1.4rem}
+.hero__meta{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;margin-top:2rem}
 .hero__meta .status{margin-top:0}
+/* the hero controls are enlarged above; step them down so the nowrap
+   rating chip still fits a 320px screen without sideways scroll */
+@media (max-width:40rem){
+  .herostars{padding:.5rem .85rem;font-size:var(--step-0);min-height:48px;gap:.35rem}
+  .herostars__n{font-size:var(--step--1)}
+  .hero__meta .status{padding:.55rem 1rem;min-height:48px;font-size:var(--step--1)}
+  .hero__cta .btn{padding:.75rem 1.3rem;min-height:48px;font-size:var(--step--1)}
+}
 
 /* --- review carousel ------------------------------------------------- */
 .carou{margin-top:1.8rem}

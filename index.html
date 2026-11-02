@@ -133,19 +133,18 @@ body::before{content:"";position:fixed;inset:0 0 auto;
   font-weight:700;color:var(--muted);margin-bottom:1rem}
 .hero h1{font-size:var(--step-4);letter-spacing:-.02em;font-weight:600}
 .hero h1 em{font-style:italic;color:var(--accent)}
-.hero__lede{margin-top:1.1rem;font-size:var(--step-1);color:var(--muted);
-  max-width:34ch}
-.hero__cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.8rem}
+.hero__cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
+.hero__cta .btn{min-height:52px;padding:.85rem 1.7rem;font-size:var(--step-0)}
 .hero__art{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;min-width:0}
 .hero__art img{border-radius:var(--radius);aspect-ratio:1;object-fit:cover;
   width:100%;border:1px solid var(--line)}
 .hero__art img:first-child{grid-column:span 2;aspect-ratio:4/3}
 
 /* live open/closed pill */
-.status{display:inline-flex;align-items:center;gap:.55rem;margin-top:1.4rem;
-  padding:.45rem .95rem;border-radius:999px;background:var(--raised);
-  border:1px solid var(--line-strong);font-size:var(--step--1);font-weight:600}
-.status__dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--muted);flex:none}
+.status{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.4rem;
+  min-height:52px;padding:.7rem 1.3rem;border-radius:999px;background:var(--raised);
+  border:1px solid var(--line-strong);font-size:var(--step-0);font-weight:600}
+.status__dot{width:.7rem;height:.7rem;border-radius:50%;background:var(--muted);flex:none}
 .status[data-open="yes"] .status__dot{background:var(--accent);
   animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
@@ -345,11 +344,19 @@ body::before{content:"";position:fixed;inset:0 0 auto;
 .navstars__n{color:var(--muted);font-weight:500}
 .navstars:hover .navstars__n{color:inherit}
 @media (max-width:40rem){.navstars__n{display:none}}
-.herostars{padding:.5rem 1rem;font-size:var(--step-0);min-height:44px}
-.herostars__n{color:var(--muted);font-weight:500;font-size:var(--step--1)}
+.herostars{padding:.7rem 1.3rem;font-size:var(--step-1);min-height:52px;gap:.55rem}
+.herostars__n{color:var(--muted);font-weight:500;font-size:var(--step-0)}
 .herostars:hover .herostars__n{color:inherit}
-.hero__meta{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;margin-top:1.4rem}
+.hero__meta{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;margin-top:2rem}
 .hero__meta .status{margin-top:0}
+/* the hero controls are enlarged above; step them down so the nowrap
+   rating chip still fits a 320px screen without sideways scroll */
+@media (max-width:40rem){
+  .herostars{padding:.5rem .85rem;font-size:var(--step-0);min-height:48px;gap:.35rem}
+  .herostars__n{font-size:var(--step--1)}
+  .hero__meta .status{padding:.55rem 1rem;min-height:48px;font-size:var(--step--1)}
+  .hero__cta .btn{padding:.75rem 1.3rem;min-height:48px;font-size:var(--step--1)}
+}
 
 /* --- review carousel ------------------------------------------------- */
 .carou{margin-top:1.8rem}
@@ -639,7 +646,7 @@ html[data-a11y-stopmotion] body>*:not(.a11y-ui) *
  "aggregateRating": {
   "@type": "AggregateRating",
   "ratingValue": 4.6,
-  "reviewCount": 80
+  "reviewCount": 81
  },
  "sameAs": [
   "https://www.instagram.com/afternoon__coffee/"
@@ -701,7 +708,7 @@ html[data-a11y-stopmotion] body>*:not(.a11y-ui) *
     <a class="hdr__logo" href="#top">
       <span class="mark"><img src="assets/img/daisy-disc.png" alt="" width="96" height="96" decoding="async"><span class="mark__txt"><b>afternoon</b><i>roasting</i></span></span><span class="sr-only">Afternoon Roasting home</span>
     </a>
-    <a class="navstars" href="#reviews"><svg class="stars" width="65" height="13" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip4613"><rect x="0" y="0" width="110.40" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip4613)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><strong>4.6</strong><span class="navstars__n">Google</span><span class="sr-only">out of 5, from 80 Google reviews. Read the reviews.</span></a>
+    <a class="navstars" href="#reviews"><svg class="stars" width="65" height="13" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip4613"><rect x="0" y="0" width="110.40" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip4613)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><strong>4.6</strong><span class="navstars__n">Google</span><span class="sr-only">out of 5, from 81 Google reviews. Read the reviews.</span></a>
     <nav class="nav" aria-label="Main">
       <a href="#coffee">Coffee</a>
       <a href="#cafe">Cafe</a>
@@ -723,12 +730,8 @@ html[data-a11y-stopmotion] body>*:not(.a11y-ui) *
     <div>
       <p class="eyebrow">Gainesville, Florida &middot; since the shop on South Main</p>
       <h1 id="hero-heading">Roasted Monday.<br><em>Shipped Tuesday.</em></h1>
-      <p class="hero__lede">A microscopic roaster and coffeeshop giving it our
-        all to source, roast and serve the finest coffees. Seven bags on the
-        shelf, an espresso bar at 619&nbsp;S&nbsp;Main, and coffee that reaches
-        you days old rather than months.</p>
       <div class="hero__meta">
-        <a class="herostars" href="#reviews"><svg class="stars" width="85" height="17" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip4617"><rect x="0" y="0" width="110.40" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip4617)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><strong>4.6</strong><span class="herostars__n">80 Google reviews</span><span class="sr-only">out of 5, from 80 Google reviews. Read the reviews.</span></a>
+        <a class="herostars" href="#reviews"><svg class="stars" width="85" height="17" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip4617"><rect x="0" y="0" width="110.40" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip4617)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><strong>4.6</strong><span class="herostars__n">81 Google reviews</span><span class="sr-only">out of 5, from 81 Google reviews. Read the reviews.</span></a>
         <p class="status" id="status" data-open="unknown">
           <span class="status__dot" aria-hidden="true"></span>
           <span class="status__text">Open daily, 7:30 AM – 3 PM</span>
@@ -939,14 +942,14 @@ html[data-a11y-stopmotion] body>*:not(.a11y-ui) *
         <svg class="stars" width="120" height="24" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip4624"><rect x="0" y="0" width="110.40" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip4624)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg>
         <div>
           <p class="rating__num">4.6<span class="sr-only"> out of 5</span></p>
-          <p class="rating__meta">80 Google reviews</p>
+          <p class="rating__meta">81 Google reviews</p>
         </div>
       </div>
       <div class="rating__rule" aria-hidden="true"></div>
       <div class="rating__side">
         <span>Reviews below are five-star ones, posted publicly on the
           Afternoon Coffee Google listing.</span>
-        <a href="https://www.google.com/maps/place/?q=place_id:ChIJIfI8S2uj6IgRZp7PWG9bGO8">Read all 80 on Google</a>
+        <a href="https://www.google.com/maps/place/?q=place_id:ChIJIfI8S2uj6IgRZp7PWG9bGO8">Read all 81 on Google</a>
       </div>
     </div>
 
