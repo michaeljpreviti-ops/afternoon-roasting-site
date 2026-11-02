@@ -561,6 +561,8 @@ def hero():
     <div>
       <p class="eyebrow">Gainesville, Florida &middot; since the shop on South Main</p>
       <h1 id="hero-heading">Roasted Monday.<br><em>Shipped Tuesday.</em></h1>
+      <p class="hero__lede">A microscopic roaster and coffeeshop. Seven bags on
+        the shelf, and coffee that reaches you days old rather than months.</p>
       <div class="hero__meta">
         {star_badge('herostars', 17,
                     f'<span class="herostars__n">{b["google_count"]} Google reviews</span>')}

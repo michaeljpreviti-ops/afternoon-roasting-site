@@ -133,6 +133,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;
   font-weight:700;color:var(--muted);margin-bottom:1rem}
 .hero h1{font-size:var(--step-4);letter-spacing:-.02em;font-weight:600}
 .hero h1 em{font-style:italic;color:var(--accent)}
+.hero__lede{margin-top:1rem;font-size:var(--step-1);color:var(--muted);
+  max-width:40ch}
 .hero__cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
 .hero__cta .btn{min-height:52px;padding:.85rem 1.7rem;font-size:var(--step-0)}
 .hero__art{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;min-width:0}
@@ -347,7 +349,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;
 .herostars{padding:.7rem 1.3rem;font-size:var(--step-1);min-height:52px;gap:.55rem}
 .herostars__n{color:var(--muted);font-weight:500;font-size:var(--step-0)}
 .herostars:hover .herostars__n{color:inherit}
-.hero__meta{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;margin-top:2rem}
+.hero__meta{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;margin-top:1.5rem}
 .hero__meta .status{margin-top:0}
 /* the hero controls are enlarged above; step them down so the nowrap
    rating chip still fits a 320px screen without sideways scroll */
@@ -730,6 +732,8 @@ html[data-a11y-stopmotion] body>*:not(.a11y-ui) *
     <div>
       <p class="eyebrow">Gainesville, Florida &middot; since the shop on South Main</p>
       <h1 id="hero-heading">Roasted Monday.<br><em>Shipped Tuesday.</em></h1>
+      <p class="hero__lede">A microscopic roaster and coffeeshop. Seven bags on
+        the shelf, and coffee that reaches you days old rather than months.</p>
       <div class="hero__meta">
         <a class="herostars" href="#reviews"><svg class="stars" width="85" height="17" viewBox="0 0 120 24" aria-hidden="true" focusable="false"><defs><clipPath id="starclip4617"><rect x="0" y="0" width="110.40" height="24"></rect></clipPath></defs><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--empty"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--empty"></path><g clip-path="url(#starclip4617)"><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(0 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(24 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(48 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(72 0)" class="star star--full"></path><path d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4-4.7-4.6 6.5-.9z" transform="translate(96 0)" class="star star--full"></path></g></svg><strong>4.6</strong><span class="herostars__n">81 Google reviews</span><span class="sr-only">out of 5, from 81 Google reviews. Read the reviews.</span></a>
         <p class="status" id="status" data-open="unknown">
