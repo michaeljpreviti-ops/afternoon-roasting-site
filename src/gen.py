@@ -49,6 +49,31 @@ BUSINESS = {
     "price_band": "$1–10",
 }
 
+# The first-order offer bar.
+#
+# It is OFF for ordinary visitors: "always" stays False until the owner has
+# created a matching discount code in Shopify, because the bar promises a code
+# and an empty promise is worse than no bar. Add ?promo=1 to any URL to demo
+# it meanwhile. Flipping "always" to True is the whole launch.
+#
+# The address posts to the shop's own Shopify customer endpoint, so signups
+# land in the owner's existing customer list tagged "newsletter" -- no new
+# service and no API key. Shopify's reply is opaque to us (the request is
+# sent no-cors), so the bar reports that it sent the address, not that
+# Shopify accepted it.
+PROMO = {
+    "always": False,
+    "endpoint": SHOP + "/contact",
+    "title": "10% off your first order",
+    "note": "Join the list and we&rsquo;ll send a code for your first bag.",
+    "label": "Email address",
+    "placeholder": "you@example.com",
+    "cta": "Get the code",
+    "done": "Thanks &mdash; your address is on its way to the roastery.",
+    "fine": "Occasional coffee news. Unsubscribe any time.",
+    "close": "Close offer",
+}
+
 # --------------------------------------------------------------------------
 # The coffee. Prices, sizes, cupping notes and farm data are lifted from the
 # shop's own product pages; "buy" is the handle on afternoonroasting.com.
@@ -1034,7 +1059,8 @@ def build_js():
     return (js.replace("OPEN_HOUR", repr(BUSINESS["open_hour"]))
               .replace("CLOSE_HOUR", repr(BUSINESS["close_hour"]))
               .replace("OPEN_LABEL", json.dumps(BUSINESS["open_label"]))
-              .replace("CLOSED_LABEL", json.dumps(BUSINESS["closed_label"])))
+              .replace("CLOSED_LABEL", json.dumps(BUSINESS["closed_label"]))
+              .replace("PROMO_ALWAYS", "true" if PROMO["always"] else "false"))
 
 
 def schema():
@@ -1078,6 +1104,39 @@ def faq_schema():
     }, indent=1)
 
 
+def promo():
+    """A dismissible offer bar. Plain page content, not .a11y-ui -- the
+    accessibility toolbar is meant to restyle this the way it restyles the
+    rest of the page. Works without JavaScript too: the form is a real
+    Shopify post, so it degrades to opening the shop in a new tab."""
+    p = PROMO
+    return f"""
+<aside class="promo" id="promo" hidden aria-labelledby="promo-title">
+  <div class="promo__in">
+    <div class="promo__copy">
+      <p class="promo__title" id="promo-title">{p['title']}</p>
+      <p class="promo__note">{p['note']}</p>
+    </div>
+    <form class="promo__form" id="promo-form" method="post"
+          action="{p['endpoint']}" target="_blank" rel="noopener">
+      <input type="hidden" name="form_type" value="customer">
+      <input type="hidden" name="utf8" value="&#10003;">
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <label class="sr-only" for="promo-email">{p['label']}</label>
+      <input class="promo__email" id="promo-email" type="email"
+             name="contact[email]" placeholder="{p['placeholder']}"
+             autocomplete="email" required>
+      <button class="btn btn--solid promo__go" type="submit">{p['cta']}</button>
+    </form>
+    <p class="promo__done" id="promo-done" role="status" hidden>{p['done']}</p>
+    <p class="promo__fine">{p['fine']}</p>
+  </div>
+  <button class="promo__x" type="button" aria-label="{p['close']}">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</aside>"""
+
+
 def body():
     return "\n".join([
         '<a class="skip" href="#main-content">Skip to main content</a>',
@@ -1086,6 +1145,7 @@ def body():
         hero(), coffee(), how(), cafe(), ratings(), gallery(), faq(), visit(),
         '</main>',
         footer(),
+        promo(),
         a11y_widget(),
     ])
 

@@ -41,7 +41,8 @@ Sticky header with a live Google rating chip · hero with an open/closed clock i
 time zone · the seven-coffee shelf with cupping notes, farm data and prices by size · Coffee Club
 · the roasting week, Monday to Wednesday · the cafe board · twelve Google reviews in an
 auto-advancing carousel · photo gallery · merch · FAQ accordion · visit details · footer ·
-accessibility toolbar · light and dark themes · schema.org `CafeOrCoffeeShop` and `FAQPage`.
+accessibility toolbar · a first-order offer bar (off by default, see below) · light and dark
+themes · schema.org `CafeOrCoffeeShop` and `FAQPage`.
 
 ## Accessibility
 
@@ -77,6 +78,34 @@ storage degrades quietly. The panel keeps its own fixed light palette, checked b
 
 The review carousel auto-advances with a visible Pause control (WCAG 2.2.2), holds while the
 pointer or keyboard focus is inside it, and does not move at all under `prefers-reduced-motion`.
+
+## The first-order offer bar
+
+A dismissible bar offering 10% off a first order in exchange for an email address.
+
+**It is off for ordinary visitors.** `PROMO["always"]` in `gen.py` is `False`, so the bar never
+appears on the live site; append `?promo=1` to any URL to demonstrate it. Flipping that one flag
+to `True` launches it.
+
+It is off on purpose. The bar promises a discount code, and **no such code exists yet** — the
+Shopify store has no discount set up and, as of 2026-11-02, no newsletter signup of any kind.
+Turning the bar on before the owner creates a matching code in Shopify Admin would promise
+customers something that fails at checkout.
+
+The address posts to the shop's own Shopify customer endpoint, `/contact` with
+`form_type=customer` and the tag `newsletter`, so signups land in the owner's existing customer
+list. No new service, no API key, nothing to maintain. Two things follow from that:
+
+- the request goes `no-cors`, so Shopify's answer is opaque. The bar therefore says the address
+  was **sent**, not that it was accepted. Do not reword it into a promise we cannot check;
+- without JavaScript the form is still a real Shopify post and opens the shop in a new tab.
+
+Every colour is an existing token, so the pairs the build already enforces cover it in both
+themes — no new entries in `CONTRAST_PAIRS` were needed. The bar is ordinary page content, not
+`.a11y-ui`, so the accessibility toolbar restyles it like the rest of the page. It clears the
+toolbar's bottom-left launcher at every width, closes on Escape or the X, remembers a dismissal
+in `localStorage` (wrapped in try/catch), and its field, button and close control are all at
+least 44px.
 
 ## Where the content came from
 
@@ -122,6 +151,11 @@ Worth asking before this goes anywhere near the live domain:
 7. **Facebook.** The site links only Instagram (`@afternoon__coffee`). Is there a Facebook page?
 8. **The Psycho Killer tee** is the only merch in stock. Keep it on the page, or drop merch until
    there is more?
+9. **The 10% first-order offer.** The bar is built but switched off. Does the owner want it at
+   all, and at 10%? If yes they need to create the discount code in Shopify Admin, and decide
+   who sends the welcome email — Shopify will store the address, but nothing mails the code out
+   on its own. Note there is no newsletter signup anywhere on the current store, so this would
+   be the shop's first email capture.
 
 ## Deploy
 

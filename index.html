@@ -360,6 +360,60 @@ body::before{content:"";position:fixed;inset:0 0 auto;
   .hero__cta .btn{padding:.75rem 1.3rem;min-height:48px;font-size:var(--step--1)}
 }
 
+/* --- first-order offer bar ------------------------------------------- */
+/* Every colour here is an existing token, so the pairs the build already
+   enforces cover it: fg/muted/accent on surface, accent-ink on accent,
+   fg and muted on bg for the field, line-strong for the control borders. */
+.promo{position:fixed;z-index:60;left:50%;bottom:1.25rem;
+  transform:translateX(-50%);width:min(40rem,calc(100% - 2rem));
+  background:var(--surface);border:1px solid var(--line-strong);
+  border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.18);
+  padding:1.05rem 3.25rem 1.05rem 1.15rem}
+.promo[hidden]{display:none}
+.promo__in{display:grid;gap:.65rem}
+.promo__title{font-weight:700;font-size:var(--step-0);line-height:1.3}
+.promo__note{color:var(--muted);font-size:var(--step--1);line-height:1.45}
+.promo__form{display:flex;gap:.5rem;flex-wrap:wrap}
+.promo__email{flex:1 1 11rem;min-width:0;min-height:48px;padding:.6rem 1rem;
+  border-radius:999px;border:1px solid var(--line-strong);
+  background:var(--bg);color:var(--fg);font-family:var(--font-ui);
+  font-size:var(--step--1)}
+.promo__email::placeholder{color:var(--muted);opacity:1}
+.promo__go{min-height:48px;flex:0 0 auto}
+.promo__done{font-weight:700;color:var(--accent);font-size:var(--step--1)}
+.promo__done[hidden]{display:none}
+.promo__fine{color:var(--muted);font-size:var(--step--1);opacity:.85}
+.promo__x{position:absolute;top:.45rem;right:.45rem;width:44px;height:44px;
+  display:grid;place-items:center;border:0;background:transparent;
+  color:var(--muted);font-size:1.6rem;line-height:1;cursor:pointer;
+  border-radius:50%;font-family:var(--font-ui)}
+.promo__x:hover{color:var(--fg);background:var(--raised)}
+/* side by side once there is room for it */
+@media (min-width:46rem){
+  .promo__in{grid-template-columns:1fr auto;align-items:center;
+    column-gap:1.25rem;row-gap:.45rem}
+  .promo__copy{grid-column:1}
+  /* keep the field and its button on one line once side by side */
+  .promo__form{grid-column:2;grid-row:1;flex-wrap:nowrap;width:22rem}
+  .promo__email{flex:1 1 auto}
+  .promo__done,.promo__fine{grid-column:1/-1}
+}
+/* the accessibility launcher sits bottom-left; clear it on small screens,
+   and tighten up so the bar does not eat a short phone screen */
+@media (max-width:40rem){
+  .promo{bottom:5.5rem;padding:.85rem 2.9rem .85rem .95rem}
+  .promo__in{gap:.5rem}
+  .promo__form{gap:.4rem}
+  .promo__fine{font-size:.72rem}
+}
+@media (prefers-reduced-motion:no-preference){
+  .promo:not([hidden]){animation:promo-in .3s ease-out both}
+}
+@keyframes promo-in{
+  from{opacity:0;transform:translate(-50%,1.25rem)}
+  to{opacity:1;transform:translate(-50%,0)}
+}
+
 /* --- review carousel ------------------------------------------------- */
 .carou{margin-top:1.8rem}
 .carou__vp{position:relative;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
@@ -1096,6 +1150,31 @@ html[data-a11y-stopmotion] body>*:not(.a11y-ui) *
   </div>
 </footer>
 
+<aside class="promo" id="promo" hidden aria-labelledby="promo-title">
+  <div class="promo__in">
+    <div class="promo__copy">
+      <p class="promo__title" id="promo-title">10% off your first order</p>
+      <p class="promo__note">Join the list and we&rsquo;ll send a code for your first bag.</p>
+    </div>
+    <form class="promo__form" id="promo-form" method="post"
+          action="https://afternoonroasting.com/contact" target="_blank" rel="noopener">
+      <input type="hidden" name="form_type" value="customer">
+      <input type="hidden" name="utf8" value="&#10003;">
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <label class="sr-only" for="promo-email">Email address</label>
+      <input class="promo__email" id="promo-email" type="email"
+             name="contact[email]" placeholder="you@example.com"
+             autocomplete="email" required>
+      <button class="btn btn--solid promo__go" type="submit">Get the code</button>
+    </form>
+    <p class="promo__done" id="promo-done" role="status" hidden>Thanks &mdash; your address is on its way to the roastery.</p>
+    <p class="promo__fine">Occasional coffee news. Unsubscribe any time.</p>
+  </div>
+  <button class="promo__x" type="button" aria-label="Close offer">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</aside>
+
 <aside class="a11y-ui a11y-root" aria-label="Accessibility adjustments">
 <button class="a11y-fab" id="a11yFab" type="button" aria-expanded="false"
         aria-controls="a11yPanel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6a2.1 2.1 0 1 1 0 4.2 2.1 2.1 0 0 1 0-4.2zM3.4 7.9c2.7.9 5.6 1.4 8.6 1.4s5.9-.5 8.6-1.4a1.2 1.2 0 1 1 .7 2.3c-2 .6-4 1.1-6.1 1.3l.6 3.1 2.3 5.7a1.2 1.2 0 1 1-2.2.9L13.4 16h-2.8l-2.5 6.2a1.2 1.2 0 1 1-2.2-.9l2.3-5.7.6-3.1c-2.1-.2-4.1-.7-6.1-1.3a1.2 1.2 0 1 1 .7-2.3z"/></svg>
@@ -1445,6 +1524,78 @@ html[data-a11y-stopmotion] body>*:not(.a11y-ui) *
     load();
     apply();
   }());
+
+  /* ---- first-order offer bar ----------------------------------------- */
+  (function () {
+    var bar = document.getElementById("promo");
+    if (!bar) { return; }
+
+    /* Off for ordinary visitors until the discount code exists in Shopify.
+       ?promo=1 shows it anyway, so it can be demonstrated on the live URL. */
+    var forced = /[?&]promo=1/.test(window.location.search);
+    if (!false && !forced) { return; }
+
+    var KEY = "afternoon-promo-dismissed";
+    function stored(k) {
+      try { return window.localStorage.getItem(k); } catch (e) { return null; }
+    }
+    function store(k, v) {
+      try { window.localStorage.setItem(k, v); } catch (e) { /* private window */ }
+    }
+    /* A forced demo always shows, so one dismissal does not spoil the demo. */
+    if (!forced && stored(KEY) === "1") { return; }
+
+    var form = document.getElementById("promo-form");
+    var field = document.getElementById("promo-email");
+    var done = document.getElementById("promo-done");
+    var x = bar.querySelector(".promo__x");
+    var timer = null;
+
+    function hide() {
+      bar.hidden = true;
+      if (timer) { window.clearTimeout(timer); timer = null; }
+      store(KEY, "1");
+    }
+
+    x.addEventListener("click", hide);
+    document.addEventListener("keydown", function (e) {
+      if ((e.key === "Escape" || e.key === "Esc") && !bar.hidden) { hide(); }
+    });
+
+    form.addEventListener("submit", function (e) {
+      /* Let the browser show its own message for an empty or malformed
+         address rather than posting nothing. */
+      if (!field.value || (field.checkValidity && !field.checkValidity())) {
+        return;
+      }
+      if (!window.fetch || !window.URLSearchParams || !window.FormData) {
+        return;            /* no fetch: let the real post happen, new tab */
+      }
+      e.preventDefault();
+      /* URLSearchParams sends application/x-www-form-urlencoded, which is
+         CORS-safelisted, so this crosses to Shopify without a preflight.
+         The reply is opaque, so the message below says the address was
+         sent -- not that Shopify accepted it. */
+      var data = new window.URLSearchParams(new window.FormData(form));
+      try {
+        window.fetch(form.action, {
+          method: "POST", mode: "no-cors", body: data
+        })["catch"](function () { /* offline: nothing useful to say */ });
+      } catch (err) {
+        form.submit();     /* fall back to the ordinary post */
+        return;
+      }
+      form.hidden = true;
+      done.hidden = false;
+      store(KEY, "1");
+      timer = window.setTimeout(function () { bar.hidden = true; }, 6000);
+    });
+
+    /* A beat after load, so it reads as an offer and not as a page element
+       that failed to render. */
+    window.setTimeout(function () { bar.hidden = false; }, 1500);
+  }());
+
 }());
 </script>
 </body>

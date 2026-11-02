@@ -313,4 +313,76 @@
     load();
     apply();
   }());
+
+  /* ---- first-order offer bar ----------------------------------------- */
+  (function () {
+    var bar = document.getElementById("promo");
+    if (!bar) { return; }
+
+    /* Off for ordinary visitors until the discount code exists in Shopify.
+       ?promo=1 shows it anyway, so it can be demonstrated on the live URL. */
+    var forced = /[?&]promo=1/.test(window.location.search);
+    if (!PROMO_ALWAYS && !forced) { return; }
+
+    var KEY = "afternoon-promo-dismissed";
+    function stored(k) {
+      try { return window.localStorage.getItem(k); } catch (e) { return null; }
+    }
+    function store(k, v) {
+      try { window.localStorage.setItem(k, v); } catch (e) { /* private window */ }
+    }
+    /* A forced demo always shows, so one dismissal does not spoil the demo. */
+    if (!forced && stored(KEY) === "1") { return; }
+
+    var form = document.getElementById("promo-form");
+    var field = document.getElementById("promo-email");
+    var done = document.getElementById("promo-done");
+    var x = bar.querySelector(".promo__x");
+    var timer = null;
+
+    function hide() {
+      bar.hidden = true;
+      if (timer) { window.clearTimeout(timer); timer = null; }
+      store(KEY, "1");
+    }
+
+    x.addEventListener("click", hide);
+    document.addEventListener("keydown", function (e) {
+      if ((e.key === "Escape" || e.key === "Esc") && !bar.hidden) { hide(); }
+    });
+
+    form.addEventListener("submit", function (e) {
+      /* Let the browser show its own message for an empty or malformed
+         address rather than posting nothing. */
+      if (!field.value || (field.checkValidity && !field.checkValidity())) {
+        return;
+      }
+      if (!window.fetch || !window.URLSearchParams || !window.FormData) {
+        return;            /* no fetch: let the real post happen, new tab */
+      }
+      e.preventDefault();
+      /* URLSearchParams sends application/x-www-form-urlencoded, which is
+         CORS-safelisted, so this crosses to Shopify without a preflight.
+         The reply is opaque, so the message below says the address was
+         sent -- not that Shopify accepted it. */
+      var data = new window.URLSearchParams(new window.FormData(form));
+      try {
+        window.fetch(form.action, {
+          method: "POST", mode: "no-cors", body: data
+        })["catch"](function () { /* offline: nothing useful to say */ });
+      } catch (err) {
+        form.submit();     /* fall back to the ordinary post */
+        return;
+      }
+      form.hidden = true;
+      done.hidden = false;
+      store(KEY, "1");
+      timer = window.setTimeout(function () { bar.hidden = true; }, 6000);
+    });
+
+    /* A beat after load, so it reads as an offer and not as a page element
+       that failed to render. */
+    window.setTimeout(function () { bar.hidden = false; }, 1500);
+  }());
+
 }());
